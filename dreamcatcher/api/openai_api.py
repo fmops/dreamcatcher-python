@@ -19,16 +19,16 @@ from typing_extensions import Annotated
 from pydantic import Field
 from typing import List, Optional
 from typing_extensions import Annotated
-from openapi_client.models.chat_completion_response import ChatCompletionResponse
-from openapi_client.models.completion import Completion
-from openapi_client.models.completion_response import CompletionResponse
-from openapi_client.models.create_chat_completion import CreateChatCompletion
-from openapi_client.models.embedding import Embedding
-from openapi_client.models.embedding_response_inner import EmbeddingResponseInner
+from dreamcatcher.models.chat_completion_response import ChatCompletionResponse
+from dreamcatcher.models.completion import Completion
+from dreamcatcher.models.completion_response import CompletionResponse
+from dreamcatcher.models.create_chat_completion import CreateChatCompletion
+from dreamcatcher.models.embedding import Embedding
+from dreamcatcher.models.embedding_response_inner import EmbeddingResponseInner
 
-from openapi_client.api_client import ApiClient, RequestSerialized
-from openapi_client.api_response import ApiResponse
-from openapi_client.rest import RESTResponseType
+from dreamcatcher.api_client import ApiClient, RequestSerialized
+from dreamcatcher.api_response import ApiResponse
+from dreamcatcher.rest import RESTResponseType
 
 
 class OpenaiApi:
@@ -45,7 +45,7 @@ class OpenaiApi:
 
 
     @validate_call
-    def stubidity_open_ai_chat_completion_call(
+    async def stubidity_open_ai_chat_completion_call(
         self,
         create_chat_completion: Annotated[Optional[CreateChatCompletion], Field(description="Chat completion params")] = None,
         _request_timeout: Union[
@@ -99,11 +99,11 @@ class OpenaiApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ChatCompletionResponse",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -111,7 +111,7 @@ class OpenaiApi:
 
 
     @validate_call
-    def stubidity_open_ai_chat_completion_call_with_http_info(
+    async def stubidity_open_ai_chat_completion_call_with_http_info(
         self,
         create_chat_completion: Annotated[Optional[CreateChatCompletion], Field(description="Chat completion params")] = None,
         _request_timeout: Union[
@@ -165,11 +165,11 @@ class OpenaiApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ChatCompletionResponse",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -177,7 +177,7 @@ class OpenaiApi:
 
 
     @validate_call
-    def stubidity_open_ai_chat_completion_call_without_preload_content(
+    async def stubidity_open_ai_chat_completion_call_without_preload_content(
         self,
         create_chat_completion: Annotated[Optional[CreateChatCompletion], Field(description="Chat completion params")] = None,
         _request_timeout: Union[
@@ -231,7 +231,7 @@ class OpenaiApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ChatCompletionResponse",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -313,7 +313,7 @@ class OpenaiApi:
 
 
     @validate_call
-    def stubidity_open_ai_completion_call(
+    async def stubidity_open_ai_completion_call(
         self,
         completion: Annotated[Optional[Completion], Field(description="Completion params")] = None,
         _request_timeout: Union[
@@ -367,11 +367,11 @@ class OpenaiApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CompletionResponse",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -379,7 +379,7 @@ class OpenaiApi:
 
 
     @validate_call
-    def stubidity_open_ai_completion_call_with_http_info(
+    async def stubidity_open_ai_completion_call_with_http_info(
         self,
         completion: Annotated[Optional[Completion], Field(description="Completion params")] = None,
         _request_timeout: Union[
@@ -433,11 +433,11 @@ class OpenaiApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CompletionResponse",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -445,7 +445,7 @@ class OpenaiApi:
 
 
     @validate_call
-    def stubidity_open_ai_completion_call_without_preload_content(
+    async def stubidity_open_ai_completion_call_without_preload_content(
         self,
         completion: Annotated[Optional[Completion], Field(description="Completion params")] = None,
         _request_timeout: Union[
@@ -499,7 +499,7 @@ class OpenaiApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "CompletionResponse",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -581,7 +581,7 @@ class OpenaiApi:
 
 
     @validate_call
-    def stubidity_open_ai_embedding_call(
+    async def stubidity_open_ai_embedding_call(
         self,
         embedding: Annotated[Optional[Embedding], Field(description="Embedding params")] = None,
         _request_timeout: Union[
@@ -635,11 +635,11 @@ class OpenaiApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[EmbeddingResponseInner]",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -647,7 +647,7 @@ class OpenaiApi:
 
 
     @validate_call
-    def stubidity_open_ai_embedding_call_with_http_info(
+    async def stubidity_open_ai_embedding_call_with_http_info(
         self,
         embedding: Annotated[Optional[Embedding], Field(description="Embedding params")] = None,
         _request_timeout: Union[
@@ -701,11 +701,11 @@ class OpenaiApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[EmbeddingResponseInner]",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -713,7 +713,7 @@ class OpenaiApi:
 
 
     @validate_call
-    def stubidity_open_ai_embedding_call_without_preload_content(
+    async def stubidity_open_ai_embedding_call_without_preload_content(
         self,
         embedding: Annotated[Optional[Embedding], Field(description="Embedding params")] = None,
         _request_timeout: Union[
@@ -767,7 +767,7 @@ class OpenaiApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[EmbeddingResponseInner]",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -849,7 +849,7 @@ class OpenaiApi:
 
 
     @validate_call
-    def stubidity_open_ai_embedding_call__2(
+    async def stubidity_open_ai_embedding_call__2(
         self,
         embedding: Annotated[Optional[Embedding], Field(description="Embedding params")] = None,
         _request_timeout: Union[
@@ -903,11 +903,11 @@ class OpenaiApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[EmbeddingResponseInner]",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -915,7 +915,7 @@ class OpenaiApi:
 
 
     @validate_call
-    def stubidity_open_ai_embedding_call__2_with_http_info(
+    async def stubidity_open_ai_embedding_call__2_with_http_info(
         self,
         embedding: Annotated[Optional[Embedding], Field(description="Embedding params")] = None,
         _request_timeout: Union[
@@ -969,11 +969,11 @@ class OpenaiApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[EmbeddingResponseInner]",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -981,7 +981,7 @@ class OpenaiApi:
 
 
     @validate_call
-    def stubidity_open_ai_embedding_call__2_without_preload_content(
+    async def stubidity_open_ai_embedding_call__2_without_preload_content(
         self,
         embedding: Annotated[Optional[Embedding], Field(description="Embedding params")] = None,
         _request_timeout: Union[
@@ -1035,7 +1035,7 @@ class OpenaiApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[EmbeddingResponseInner]",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

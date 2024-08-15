@@ -17,33 +17,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional, Union
-from openapi_client.models.dlp_zsner_policy_anonymizer import DlpZsnerPolicyAnonymizer
+from pydantic import BaseModel, ConfigDict
+from typing import Any, ClassVar, Dict, List, Optional
+from dreamcatcher.models.chat_completion_message import ChatCompletionMessage
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DlpZsnerPolicy(BaseModel):
+class ChatCompletionResponseChoicesInner(BaseModel):
     """
-    DlpZsnerPolicy
+    ChatCompletionResponseChoicesInner
     """ # noqa: E501
-    active: Optional[StrictBool] = None
-    anonymizer: Optional[DlpZsnerPolicyAnonymizer] = None
-    entities: Optional[List[StrictStr]] = None
-    name: Optional[StrictStr] = None
-    response: Optional[StrictStr] = None
-    score_threshold: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["active", "anonymizer", "entities", "name", "response", "score_threshold"]
-
-    @field_validator('response')
-    def response_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in set(['block', 'alert', 'anonymize']):
-            raise ValueError("must be one of enum values ('block', 'alert', 'anonymize')")
-        return value
+    message: Optional[ChatCompletionMessage] = None
+    __properties: ClassVar[List[str]] = ["message"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -63,7 +48,7 @@ class DlpZsnerPolicy(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DlpZsnerPolicy from a JSON string"""
+        """Create an instance of ChatCompletionResponseChoicesInner from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -84,14 +69,14 @@ class DlpZsnerPolicy(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of anonymizer
-        if self.anonymizer:
-            _dict['anonymizer'] = self.anonymizer.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of message
+        if self.message:
+            _dict['message'] = self.message.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DlpZsnerPolicy from a dict"""
+        """Create an instance of ChatCompletionResponseChoicesInner from a dict"""
         if obj is None:
             return None
 
@@ -99,12 +84,7 @@ class DlpZsnerPolicy(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "active": obj.get("active"),
-            "anonymizer": DlpZsnerPolicyAnonymizer.from_dict(obj["anonymizer"]) if obj.get("anonymizer") is not None else None,
-            "entities": obj.get("entities"),
-            "name": obj.get("name"),
-            "response": obj.get("response"),
-            "score_threshold": obj.get("score_threshold")
+            "message": ChatCompletionMessage.from_dict(obj["message"]) if obj.get("message") is not None else None
         })
         return _obj
 

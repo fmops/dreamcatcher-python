@@ -19,12 +19,12 @@ from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 from typing import List
 from typing_extensions import Annotated
-from openapi_client.models.list_endpoint_response_inner import ListEndpointResponseInner
-from openapi_client.models.show_endpoint_response import ShowEndpointResponse
+from dreamcatcher.models.list_endpoint_response_inner import ListEndpointResponseInner
+from dreamcatcher.models.show_endpoint_response import ShowEndpointResponse
 
-from openapi_client.api_client import ApiClient, RequestSerialized
-from openapi_client.api_response import ApiResponse
-from openapi_client.rest import RESTResponseType
+from dreamcatcher.api_client import ApiClient, RequestSerialized
+from dreamcatcher.api_response import ApiResponse
+from dreamcatcher.rest import RESTResponseType
 
 
 class EndpointsApi:
@@ -41,7 +41,7 @@ class EndpointsApi:
 
 
     @validate_call
-    def dreamcatcher_web_endpoint_controller_index(
+    async def dreamcatcher_web_endpoint_controller_index(
         self,
         _request_timeout: Union[
             None,
@@ -91,11 +91,11 @@ class EndpointsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ListEndpointResponseInner]",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -103,7 +103,7 @@ class EndpointsApi:
 
 
     @validate_call
-    def dreamcatcher_web_endpoint_controller_index_with_http_info(
+    async def dreamcatcher_web_endpoint_controller_index_with_http_info(
         self,
         _request_timeout: Union[
             None,
@@ -153,11 +153,11 @@ class EndpointsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ListEndpointResponseInner]",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -165,7 +165,7 @@ class EndpointsApi:
 
 
     @validate_call
-    def dreamcatcher_web_endpoint_controller_index_without_preload_content(
+    async def dreamcatcher_web_endpoint_controller_index_without_preload_content(
         self,
         _request_timeout: Union[
             None,
@@ -215,7 +215,7 @@ class EndpointsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "List[ListEndpointResponseInner]",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
@@ -282,7 +282,7 @@ class EndpointsApi:
 
 
     @validate_call
-    def dreamcatcher_web_endpoint_controller_show(
+    async def dreamcatcher_web_endpoint_controller_show(
         self,
         id: Annotated[StrictStr, Field(description="Endpoint name")],
         _request_timeout: Union[
@@ -336,11 +336,11 @@ class EndpointsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ShowEndpointResponse",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -348,7 +348,7 @@ class EndpointsApi:
 
 
     @validate_call
-    def dreamcatcher_web_endpoint_controller_show_with_http_info(
+    async def dreamcatcher_web_endpoint_controller_show_with_http_info(
         self,
         id: Annotated[StrictStr, Field(description="Endpoint name")],
         _request_timeout: Union[
@@ -402,11 +402,11 @@ class EndpointsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ShowEndpointResponse",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -414,7 +414,7 @@ class EndpointsApi:
 
 
     @validate_call
-    def dreamcatcher_web_endpoint_controller_show_without_preload_content(
+    async def dreamcatcher_web_endpoint_controller_show_without_preload_content(
         self,
         id: Annotated[StrictStr, Field(description="Endpoint name")],
         _request_timeout: Union[
@@ -468,7 +468,7 @@ class EndpointsApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "ShowEndpointResponse",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

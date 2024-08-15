@@ -15,7 +15,6 @@
 import copy
 import logging
 from logging import FileHandler
-import multiprocessing
 import sys
 from typing import Optional
 import urllib3
@@ -121,7 +120,7 @@ class Configuration:
         self.logger = {}
         """Logging Settings
         """
-        self.logger["package_logger"] = logging.getLogger("openapi_client")
+        self.logger["package_logger"] = logging.getLogger("dreamcatcher")
         self.logger["urllib3_logger"] = logging.getLogger("urllib3")
         self.logger_format = '%(asctime)s %(levelname)s %(message)s'
         """Log format
@@ -164,12 +163,9 @@ class Configuration:
            Set this to the SNI value expected by the server.
         """
 
-        self.connection_pool_maxsize = multiprocessing.cpu_count() * 5
-        """urllib3 connection pool's maximum number of connections saved
-           per pool. urllib3 uses 1 connection as default value, but this is
-           not the best value when you are making a lot of possibly parallel
-           requests to the same host, which is often the case here.
-           cpu_count * 5 is used as default value to increase performance.
+        self.connection_pool_maxsize = 100
+        """This value is passed to the aiohttp to limit simultaneous connections.
+           Default values is 100, None means no-limit.
         """
 
         self.proxy: Optional[str] = None
@@ -392,7 +388,7 @@ class Configuration:
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: \n"\
-               "SDK Package Version: 1.0.0".\
+               "SDK Package Version: 0.0.1".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):

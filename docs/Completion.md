@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.completion import Completion
+from dreamcatcher.models.completion import Completion
 
 # TODO update the JSON string below
 json = "{}"

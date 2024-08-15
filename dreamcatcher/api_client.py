@@ -25,11 +25,11 @@ from urllib.parse import quote
 from typing import Tuple, Optional, List, Dict, Union
 from pydantic import SecretStr
 
-from openapi_client.configuration import Configuration
-from openapi_client.api_response import ApiResponse, T as ApiResponseT
-import openapi_client.models
-from openapi_client import rest
-from openapi_client.exceptions import (
+from dreamcatcher.configuration import Configuration
+from dreamcatcher.api_response import ApiResponse, T as ApiResponseT
+import dreamcatcher.models
+from dreamcatcher import rest
+from dreamcatcher.exceptions import (
     ApiValueError,
     ApiException,
     BadRequestException,
@@ -88,14 +88,17 @@ class ApiClient:
             self.default_headers[header_name] = header_value
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'OpenAPI-Generator/1.0.0/python'
+        self.user_agent = 'OpenAPI-Generator/0.0.1/python'
         self.client_side_validation = configuration.client_side_validation
 
-    def __enter__(self):
+    async def __aenter__(self):
         return self
 
-    def __exit__(self, exc_type, exc_value, traceback):
-        pass
+    async def __aexit__(self, exc_type, exc_value, traceback):
+        await self.close()
+
+    async def close(self):
+        await self.rest_client.close()
 
     @property
     def user_agent(self):
@@ -245,7 +248,7 @@ class ApiClient:
         return method, url, header_params, body, post_params
 
 
-    def call_api(
+    async def call_api(
         self,
         method,
         url,
@@ -268,7 +271,7 @@ class ApiClient:
 
         try:
             # perform request and return response
-            response_data = self.rest_client.request(
+            response_data = await self.rest_client.request(
                 method, url,
                 headers=header_params,
                 body=body, post_params=post_params,
@@ -444,7 +447,7 @@ class ApiClient:
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
             else:
-                klass = getattr(openapi_client.models, klass)
+                klass = getattr(dreamcatcher.models, klass)
 
         if klass in self.PRIMITIVE_TYPES:
             return self.__deserialize_primitive(data, klass)

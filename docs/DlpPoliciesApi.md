@@ -1,4 +1,4 @@
-# openapi_client.DlpPoliciesApi
+# dreamcatcher.DlpPoliciesApi
 
 All URIs are relative to *http://localhost:4000*
 
@@ -17,14 +17,14 @@ Get a DLP policy
 * Bearer Authentication (authorization):
 
 ```python
-import openapi_client
-from openapi_client.models.dlp_policy import DlpPolicy
-from openapi_client.rest import ApiException
+import dreamcatcher
+from dreamcatcher.models.dlp_policy import DlpPolicy
+from dreamcatcher.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to http://localhost:4000
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = dreamcatcher.Configuration(
     host = "http://localhost:4000"
 )
 
@@ -34,20 +34,20 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: authorization
-configuration = openapi_client.Configuration(
+configuration = dreamcatcher.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+async with dreamcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.DlpPoliciesApi(api_client)
+    api_instance = dreamcatcher.DlpPoliciesApi(api_client)
     endpoint_name = 'demo-endpoint' # str | Endpoint name
     id = 1 # int | DLP Policy ID
 
     try:
         # Get a DLP policy
-        api_response = api_instance.dreamcatcher_web_presidio_policy_controller_show(endpoint_name, id)
+        api_response = await api_instance.dreamcatcher_web_presidio_policy_controller_show(endpoint_name, id)
         print("The response of DlpPoliciesApi->dreamcatcher_web_presidio_policy_controller_show:\n")
         pprint(api_response)
     except Exception as e:

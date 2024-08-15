@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "generate": "openapi-generator-cli generate -i openapi.json -g python -o . --skip-validate-spec"
+    "generate": "curl http://localhost:4000/api/v1/openapi > openapi.json && openapi-generator-cli generate -i openapi.json -g python -o . -c config.yaml --skip-validate-spec"
   },
   "keywords": [],
   "author": "",

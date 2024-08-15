@@ -19,9 +19,9 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from openapi_client.models.content_moderation_policy import ContentModerationPolicy
-from openapi_client.models.dlp_policy import DlpPolicy
-from openapi_client.models.dlp_zsner_policy import DlpZsnerPolicy
+from dreamcatcher.models.content_moderation_policy import ContentModerationPolicy
+from dreamcatcher.models.dlp_policy import DlpPolicy
+from dreamcatcher.models.dlp_zsner_policy import DlpZsnerPolicy
 from typing import Optional, Set
 from typing_extensions import Self
 

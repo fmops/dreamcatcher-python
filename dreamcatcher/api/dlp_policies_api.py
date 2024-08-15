@@ -18,11 +18,11 @@ from typing_extensions import Annotated
 
 from pydantic import Field, StrictInt, StrictStr
 from typing_extensions import Annotated
-from openapi_client.models.dlp_policy import DlpPolicy
+from dreamcatcher.models.dlp_policy import DlpPolicy
 
-from openapi_client.api_client import ApiClient, RequestSerialized
-from openapi_client.api_response import ApiResponse
-from openapi_client.rest import RESTResponseType
+from dreamcatcher.api_client import ApiClient, RequestSerialized
+from dreamcatcher.api_response import ApiResponse
+from dreamcatcher.rest import RESTResponseType
 
 
 class DlpPoliciesApi:
@@ -39,7 +39,7 @@ class DlpPoliciesApi:
 
 
     @validate_call
-    def dreamcatcher_web_presidio_policy_controller_show(
+    async def dreamcatcher_web_presidio_policy_controller_show(
         self,
         endpoint_name: Annotated[StrictStr, Field(description="Endpoint name")],
         id: Annotated[StrictInt, Field(description="DLP Policy ID")],
@@ -97,11 +97,11 @@ class DlpPoliciesApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DlpPolicy",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -109,7 +109,7 @@ class DlpPoliciesApi:
 
 
     @validate_call
-    def dreamcatcher_web_presidio_policy_controller_show_with_http_info(
+    async def dreamcatcher_web_presidio_policy_controller_show_with_http_info(
         self,
         endpoint_name: Annotated[StrictStr, Field(description="Endpoint name")],
         id: Annotated[StrictInt, Field(description="DLP Policy ID")],
@@ -167,11 +167,11 @@ class DlpPoliciesApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DlpPolicy",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )
-        response_data.read()
+        await response_data.read()
         return self.api_client.response_deserialize(
             response_data=response_data,
             response_types_map=_response_types_map,
@@ -179,7 +179,7 @@ class DlpPoliciesApi:
 
 
     @validate_call
-    def dreamcatcher_web_presidio_policy_controller_show_without_preload_content(
+    async def dreamcatcher_web_presidio_policy_controller_show_without_preload_content(
         self,
         endpoint_name: Annotated[StrictStr, Field(description="Endpoint name")],
         id: Annotated[StrictInt, Field(description="DLP Policy ID")],
@@ -237,7 +237,7 @@ class DlpPoliciesApi:
         _response_types_map: Dict[str, Optional[str]] = {
             '200': "DlpPolicy",
         }
-        response_data = self.api_client.call_api(
+        response_data = await self.api_client.call_api(
             *_param,
             _request_timeout=_request_timeout
         )

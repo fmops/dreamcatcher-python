@@ -17,20 +17,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from openapi_client.models.chat_completion_message import ChatCompletionMessage
+from dreamcatcher.models.completion_response_choices_inner import CompletionResponseChoicesInner
 from typing import Optional, Set
 from typing_extensions import Self
 
-class CreateChatCompletion(BaseModel):
+class CompletionResponse(BaseModel):
     """
-    Creates a model response for the given chat conversation.
+    A completion response from the model.
     """ # noqa: E501
-    messages: List[ChatCompletionMessage]
-    model: StrictStr
-    stream: Optional[StrictBool] = None
-    __properties: ClassVar[List[str]] = ["messages", "model", "stream"]
+    choices: Optional[List[CompletionResponseChoicesInner]] = None
+    id: Optional[StrictStr] = None
+    model: Optional[StrictStr] = None
+    __properties: ClassVar[List[str]] = ["choices", "id", "model"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +50,7 @@ class CreateChatCompletion(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of CreateChatCompletion from a JSON string"""
+        """Create an instance of CompletionResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,18 +71,18 @@ class CreateChatCompletion(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in messages (list)
+        # override the default output from pydantic by calling `to_dict()` of each item in choices (list)
         _items = []
-        if self.messages:
-            for _item in self.messages:
+        if self.choices:
+            for _item in self.choices:
                 if _item:
                     _items.append(_item.to_dict())
-            _dict['messages'] = _items
+            _dict['choices'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of CreateChatCompletion from a dict"""
+        """Create an instance of CompletionResponse from a dict"""
         if obj is None:
             return None
 
@@ -90,9 +90,9 @@ class CreateChatCompletion(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "messages": [ChatCompletionMessage.from_dict(_item) for _item in obj["messages"]] if obj.get("messages") is not None else None,
-            "model": obj.get("model"),
-            "stream": obj.get("stream")
+            "choices": [CompletionResponseChoicesInner.from_dict(_item) for _item in obj["choices"]] if obj.get("choices") is not None else None,
+            "id": obj.get("id"),
+            "model": obj.get("model")
         })
         return _obj
 

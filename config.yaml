@@ -1,0 +1,5 @@
+additionalProperties:
+  library: asyncio
+  packageName: dreamcatcher
+  packageVersion: 0.0.1
+  projectName: dreamcatcher-api

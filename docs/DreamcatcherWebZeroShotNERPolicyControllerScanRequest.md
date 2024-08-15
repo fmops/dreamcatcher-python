@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.dreamcatcher_web_zero_shot_ner_policy_controller_scan_request import DreamcatcherWebZeroShotNERPolicyControllerScanRequest
+from dreamcatcher.models.dreamcatcher_web_zero_shot_ner_policy_controller_scan_request import DreamcatcherWebZeroShotNERPolicyControllerScanRequest
 
 # TODO update the JSON string below
 json = "{}"

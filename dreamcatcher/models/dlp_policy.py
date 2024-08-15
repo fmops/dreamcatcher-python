@@ -19,22 +19,32 @@ import json
 
 from pydantic import BaseModel, ConfigDict, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from openapi_client.models.dlp_policy_anonymizer import DlpPolicyAnonymizer
-from openapi_client.models.dlp_zsner_policy_params_dlp_zsner_policy_entities_inner import DlpZsnerPolicyParamsDlpZsnerPolicyEntitiesInner
+from dreamcatcher.models.dlp_policy_anonymizer import DlpPolicyAnonymizer
 from typing import Optional, Set
 from typing_extensions import Self
 
-class DlpZsnerPolicyParamsDlpZsnerPolicy(BaseModel):
+class DlpPolicy(BaseModel):
     """
-    DlpZsnerPolicyParamsDlpZsnerPolicy
+    DlpPolicy
     """ # noqa: E501
     active: Optional[StrictBool] = None
     anonymizer: Optional[DlpPolicyAnonymizer] = None
-    entities: Optional[List[DlpZsnerPolicyParamsDlpZsnerPolicyEntitiesInner]] = None
+    entities: Optional[List[StrictStr]] = None
     name: Optional[StrictStr] = None
     response: Optional[StrictStr] = None
     score_threshold: Optional[Union[StrictFloat, StrictInt]] = None
     __properties: ClassVar[List[str]] = ["active", "anonymizer", "entities", "name", "response", "score_threshold"]
+
+    @field_validator('entities')
+    def entities_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        for i in value:
+            if i not in set(['MEDICAL_LICENSE', 'CREDIT_CARD', 'US_PASSPORT', 'PERSON', 'URL', 'DATE_TIME', 'IBAN_CODE', 'CRYPTO', 'US_BANK_NUMBER', 'PHONE_NUMBER', 'LOCATION', 'US_DRIVER_LICENSE', 'US_ITIN', 'IP_ADDRESS', 'EMAIL_ADDRESS', 'US_SSN', 'NRP']):
+                raise ValueError("each list item must be one of ('MEDICAL_LICENSE', 'CREDIT_CARD', 'US_PASSPORT', 'PERSON', 'URL', 'DATE_TIME', 'IBAN_CODE', 'CRYPTO', 'US_BANK_NUMBER', 'PHONE_NUMBER', 'LOCATION', 'US_DRIVER_LICENSE', 'US_ITIN', 'IP_ADDRESS', 'EMAIL_ADDRESS', 'US_SSN', 'NRP')")
+        return value
 
     @field_validator('response')
     def response_validate_enum(cls, value):
@@ -64,7 +74,7 @@ class DlpZsnerPolicyParamsDlpZsnerPolicy(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of DlpZsnerPolicyParamsDlpZsnerPolicy from a JSON string"""
+        """Create an instance of DlpPolicy from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -88,18 +98,11 @@ class DlpZsnerPolicyParamsDlpZsnerPolicy(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of anonymizer
         if self.anonymizer:
             _dict['anonymizer'] = self.anonymizer.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in entities (list)
-        _items = []
-        if self.entities:
-            for _item in self.entities:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['entities'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of DlpZsnerPolicyParamsDlpZsnerPolicy from a dict"""
+        """Create an instance of DlpPolicy from a dict"""
         if obj is None:
             return None
 
@@ -109,7 +112,7 @@ class DlpZsnerPolicyParamsDlpZsnerPolicy(BaseModel):
         _obj = cls.model_validate({
             "active": obj.get("active"),
             "anonymizer": DlpPolicyAnonymizer.from_dict(obj["anonymizer"]) if obj.get("anonymizer") is not None else None,
-            "entities": [DlpZsnerPolicyParamsDlpZsnerPolicyEntitiesInner.from_dict(_item) for _item in obj["entities"]] if obj.get("entities") is not None else None,
+            "entities": obj.get("entities"),
             "name": obj.get("name"),
             "response": obj.get("response"),
             "score_threshold": obj.get("score_threshold")

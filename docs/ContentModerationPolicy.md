@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.content_moderation_policy import ContentModerationPolicy
+from dreamcatcher.models.content_moderation_policy import ContentModerationPolicy
 
 # TODO update the JSON string below
 json = "{}"

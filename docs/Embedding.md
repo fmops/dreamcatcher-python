@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.embedding import Embedding
+from dreamcatcher.models.embedding import Embedding
 
 # TODO update the JSON string below
 json = "{}"

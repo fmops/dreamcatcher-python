@@ -17,20 +17,33 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
-from openapi_client.models.completion_response_choices_inner import CompletionResponseChoicesInner
+from pydantic import BaseModel, ConfigDict, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from dreamcatcher.models.dlp_zsner_policy_anonymizer import DlpZsnerPolicyAnonymizer
 from typing import Optional, Set
 from typing_extensions import Self
 
-class CompletionResponse(BaseModel):
+class DlpZsnerPolicy(BaseModel):
     """
-    A completion response from the model.
+    DlpZsnerPolicy
     """ # noqa: E501
-    choices: Optional[List[CompletionResponseChoicesInner]] = None
-    id: Optional[StrictStr] = None
-    model: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["choices", "id", "model"]
+    active: Optional[StrictBool] = None
+    anonymizer: Optional[DlpZsnerPolicyAnonymizer] = None
+    entities: Optional[List[StrictStr]] = None
+    name: Optional[StrictStr] = None
+    response: Optional[StrictStr] = None
+    score_threshold: Optional[Union[StrictFloat, StrictInt]] = None
+    __properties: ClassVar[List[str]] = ["active", "anonymizer", "entities", "name", "response", "score_threshold"]
+
+    @field_validator('response')
+    def response_validate_enum(cls, value):
+        """Validates the enum"""
+        if value is None:
+            return value
+
+        if value not in set(['block', 'alert', 'anonymize']):
+            raise ValueError("must be one of enum values ('block', 'alert', 'anonymize')")
+        return value
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +63,7 @@ class CompletionResponse(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of CompletionResponse from a JSON string"""
+        """Create an instance of DlpZsnerPolicy from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,18 +84,14 @@ class CompletionResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in choices (list)
-        _items = []
-        if self.choices:
-            for _item in self.choices:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['choices'] = _items
+        # override the default output from pydantic by calling `to_dict()` of anonymizer
+        if self.anonymizer:
+            _dict['anonymizer'] = self.anonymizer.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of CompletionResponse from a dict"""
+        """Create an instance of DlpZsnerPolicy from a dict"""
         if obj is None:
             return None
 
@@ -90,9 +99,12 @@ class CompletionResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "choices": [CompletionResponseChoicesInner.from_dict(_item) for _item in obj["choices"]] if obj.get("choices") is not None else None,
-            "id": obj.get("id"),
-            "model": obj.get("model")
+            "active": obj.get("active"),
+            "anonymizer": DlpZsnerPolicyAnonymizer.from_dict(obj["anonymizer"]) if obj.get("anonymizer") is not None else None,
+            "entities": obj.get("entities"),
+            "name": obj.get("name"),
+            "response": obj.get("response"),
+            "score_threshold": obj.get("score_threshold")
         })
         return _obj
 

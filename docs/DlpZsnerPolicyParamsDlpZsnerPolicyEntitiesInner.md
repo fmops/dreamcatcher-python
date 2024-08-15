@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.dlp_zsner_policy_params_dlp_zsner_policy_entities_inner import DlpZsnerPolicyParamsDlpZsnerPolicyEntitiesInner
+from dreamcatcher.models.dlp_zsner_policy_params_dlp_zsner_policy_entities_inner import DlpZsnerPolicyParamsDlpZsnerPolicyEntitiesInner
 
 # TODO update the JSON string below
 json = "{}"

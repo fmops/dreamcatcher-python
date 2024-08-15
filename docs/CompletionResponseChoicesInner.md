@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.completion_response_choices_inner import CompletionResponseChoicesInner
+from dreamcatcher.models.completion_response_choices_inner import CompletionResponseChoicesInner
 
 # TODO update the JSON string below
 json = "{}"

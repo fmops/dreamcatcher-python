@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.dlp_policy_anonymizer import DlpPolicyAnonymizer
+from dreamcatcher.models.dlp_policy_anonymizer import DlpPolicyAnonymizer
 
 # TODO update the JSON string below
 json = "{}"

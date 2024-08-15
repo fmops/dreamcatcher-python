@@ -19,7 +19,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict
 from typing import Any, ClassVar, Dict, List, Optional
-from openapi_client.models.dlp_zsner_policy_params_dlp_zsner_policy import DlpZsnerPolicyParamsDlpZsnerPolicy
+from dreamcatcher.models.dlp_zsner_policy_params_dlp_zsner_policy import DlpZsnerPolicyParamsDlpZsnerPolicy
 from typing import Optional, Set
 from typing_extensions import Self
 
