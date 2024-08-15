@@ -14,14 +14,14 @@
 
 import unittest
 
-from openapi_client.api.dlp_policies_api import DlpPoliciesApi
+from dreamcatcher.api.dlp_policies_api import DlpPoliciesApi  # noqa: E501
 
 
 class TestDlpPoliciesApi(unittest.TestCase):
     """DlpPoliciesApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = DlpPoliciesApi()
+        self.api = DlpPoliciesApi()  # noqa: E501
 
     def tearDown(self) -> None:
         pass
@@ -29,7 +29,7 @@ class TestDlpPoliciesApi(unittest.TestCase):
     def test_dreamcatcher_web_presidio_policy_controller_show(self) -> None:
         """Test case for dreamcatcher_web_presidio_policy_controller_show
 
-        Get a DLP policy
+        Get a DLP policy  # noqa: E501
         """
         pass
 

@@ -13,8 +13,9 @@
 
 
 import unittest
+import datetime
 
-from openapi_client.models.list_endpoint_response_inner import ListEndpointResponseInner
+from dreamcatcher.models.list_endpoint_response_inner import ListEndpointResponseInner  # noqa: E501
 
 class TestListEndpointResponseInner(unittest.TestCase):
     """ListEndpointResponseInner unit test stubs"""
@@ -27,12 +28,12 @@ class TestListEndpointResponseInner(unittest.TestCase):
 
     def make_instance(self, include_optional) -> ListEndpointResponseInner:
         """Test ListEndpointResponseInner
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ListEndpointResponseInner`
         """
-        model = ListEndpointResponseInner()
+        model = ListEndpointResponseInner()  # noqa: E501
         if include_optional:
             return ListEndpointResponseInner(
                 name = ''

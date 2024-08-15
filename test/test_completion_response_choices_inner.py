@@ -13,8 +13,9 @@
 
 
 import unittest
+import datetime
 
-from openapi_client.models.completion_response_choices_inner import CompletionResponseChoicesInner
+from dreamcatcher.models.completion_response_choices_inner import CompletionResponseChoicesInner  # noqa: E501
 
 class TestCompletionResponseChoicesInner(unittest.TestCase):
     """CompletionResponseChoicesInner unit test stubs"""
@@ -27,12 +28,12 @@ class TestCompletionResponseChoicesInner(unittest.TestCase):
 
     def make_instance(self, include_optional) -> CompletionResponseChoicesInner:
         """Test CompletionResponseChoicesInner
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `CompletionResponseChoicesInner`
         """
-        model = CompletionResponseChoicesInner()
+        model = CompletionResponseChoicesInner()  # noqa: E501
         if include_optional:
             return CompletionResponseChoicesInner(
                 text = ''

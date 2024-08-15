@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **choices** | [**List[ChatCompletionResponseChoicesInner]**](ChatCompletionResponseChoicesInner.md) |  | [optional] 
@@ -19,7 +18,7 @@ json = "{}"
 # create an instance of ChatCompletionResponse from a JSON string
 chat_completion_response_instance = ChatCompletionResponse.from_json(json)
 # print the JSON string representation of the object
-print(ChatCompletionResponse.to_json())
+print ChatCompletionResponse.to_json()
 
 # convert the object into a dict
 chat_completion_response_dict = chat_completion_response_instance.to_dict()

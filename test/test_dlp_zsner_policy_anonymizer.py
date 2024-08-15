@@ -13,8 +13,9 @@
 
 
 import unittest
+import datetime
 
-from openapi_client.models.dlp_zsner_policy_anonymizer import DlpZsnerPolicyAnonymizer
+from dreamcatcher.models.dlp_zsner_policy_anonymizer import DlpZsnerPolicyAnonymizer  # noqa: E501
 
 class TestDlpZsnerPolicyAnonymizer(unittest.TestCase):
     """DlpZsnerPolicyAnonymizer unit test stubs"""
@@ -27,12 +28,12 @@ class TestDlpZsnerPolicyAnonymizer(unittest.TestCase):
 
     def make_instance(self, include_optional) -> DlpZsnerPolicyAnonymizer:
         """Test DlpZsnerPolicyAnonymizer
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `DlpZsnerPolicyAnonymizer`
         """
-        model = DlpZsnerPolicyAnonymizer()
+        model = DlpZsnerPolicyAnonymizer()  # noqa: E501
         if include_optional:
             return DlpZsnerPolicyAnonymizer(
                 type = 'replace'

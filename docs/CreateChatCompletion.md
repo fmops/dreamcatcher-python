@@ -3,7 +3,6 @@
 Creates a model response for the given chat conversation.
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **messages** | [**List[ChatCompletionMessage]**](ChatCompletionMessage.md) |  | 
@@ -20,7 +19,7 @@ json = "{}"
 # create an instance of CreateChatCompletion from a JSON string
 create_chat_completion_instance = CreateChatCompletion.from_json(json)
 # print the JSON string representation of the object
-print(CreateChatCompletion.to_json())
+print CreateChatCompletion.to_json()
 
 # convert the object into a dict
 create_chat_completion_dict = create_chat_completion_instance.to_dict()

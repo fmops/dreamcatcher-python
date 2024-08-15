@@ -3,7 +3,6 @@
 A request to complete with the model.
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **model** | **str** |  | 
@@ -20,7 +19,7 @@ json = "{}"
 # create an instance of Completion from a JSON string
 completion_instance = Completion.from_json(json)
 # print the JSON string representation of the object
-print(Completion.to_json())
+print Completion.to_json()
 
 # convert the object into a dict
 completion_dict = completion_instance.to_dict()

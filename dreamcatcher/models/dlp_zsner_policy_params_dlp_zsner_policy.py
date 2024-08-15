@@ -17,74 +17,58 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictBool, StrictFloat, StrictInt, StrictStr, field_validator
-from typing import Any, ClassVar, Dict, List, Optional, Union
+
+from typing import List, Optional, Union
+from pydantic import BaseModel, StrictBool, StrictFloat, StrictInt, StrictStr, conlist, validator
 from dreamcatcher.models.dlp_policy_anonymizer import DlpPolicyAnonymizer
 from dreamcatcher.models.dlp_zsner_policy_params_dlp_zsner_policy_entities_inner import DlpZsnerPolicyParamsDlpZsnerPolicyEntitiesInner
-from typing import Optional, Set
-from typing_extensions import Self
 
 class DlpZsnerPolicyParamsDlpZsnerPolicy(BaseModel):
     """
     DlpZsnerPolicyParamsDlpZsnerPolicy
-    """ # noqa: E501
+    """
     active: Optional[StrictBool] = None
     anonymizer: Optional[DlpPolicyAnonymizer] = None
-    entities: Optional[List[DlpZsnerPolicyParamsDlpZsnerPolicyEntitiesInner]] = None
+    entities: Optional[conlist(DlpZsnerPolicyParamsDlpZsnerPolicyEntitiesInner)] = None
     name: Optional[StrictStr] = None
     response: Optional[StrictStr] = None
     score_threshold: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties: ClassVar[List[str]] = ["active", "anonymizer", "entities", "name", "response", "score_threshold"]
+    __properties = ["active", "anonymizer", "entities", "name", "response", "score_threshold"]
 
-    @field_validator('response')
+    @validator('response')
     def response_validate_enum(cls, value):
         """Validates the enum"""
         if value is None:
             return value
 
-        if value not in set(['block', 'alert', 'anonymize']):
+        if value not in ('block', 'alert', 'anonymize'):
             raise ValueError("must be one of enum values ('block', 'alert', 'anonymize')")
         return value
 
-    model_config = ConfigDict(
-        populate_by_name=True,
-        validate_assignment=True,
-        protected_namespaces=(),
-    )
-
+    class Config:
+        """Pydantic configuration"""
+        allow_population_by_field_name = True
+        validate_assignment = True
 
     def to_str(self) -> str:
         """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+        return pprint.pformat(self.dict(by_alias=True))
 
     def to_json(self) -> str:
         """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
+    def from_json(cls, json_str: str) -> DlpZsnerPolicyParamsDlpZsnerPolicy:
         """Create an instance of DlpZsnerPolicyParamsDlpZsnerPolicy from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        """
-        excluded_fields: Set[str] = set([
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
+    def to_dict(self):
+        """Returns the dictionary representation of the model using alias"""
+        _dict = self.dict(by_alias=True,
+                          exclude={
+                          },
+                          exclude_none=True)
         # override the default output from pydantic by calling `to_dict()` of anonymizer
         if self.anonymizer:
             _dict['anonymizer'] = self.anonymizer.to_dict()
@@ -98,18 +82,18 @@ class DlpZsnerPolicyParamsDlpZsnerPolicy(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
+    def from_dict(cls, obj: dict) -> DlpZsnerPolicyParamsDlpZsnerPolicy:
         """Create an instance of DlpZsnerPolicyParamsDlpZsnerPolicy from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+            return DlpZsnerPolicyParamsDlpZsnerPolicy.parse_obj(obj)
 
-        _obj = cls.model_validate({
+        _obj = DlpZsnerPolicyParamsDlpZsnerPolicy.parse_obj({
             "active": obj.get("active"),
-            "anonymizer": DlpPolicyAnonymizer.from_dict(obj["anonymizer"]) if obj.get("anonymizer") is not None else None,
-            "entities": [DlpZsnerPolicyParamsDlpZsnerPolicyEntitiesInner.from_dict(_item) for _item in obj["entities"]] if obj.get("entities") is not None else None,
+            "anonymizer": DlpPolicyAnonymizer.from_dict(obj.get("anonymizer")) if obj.get("anonymizer") is not None else None,
+            "entities": [DlpZsnerPolicyParamsDlpZsnerPolicyEntitiesInner.from_dict(_item) for _item in obj.get("entities")] if obj.get("entities") is not None else None,
             "name": obj.get("name"),
             "response": obj.get("response"),
             "score_threshold": obj.get("score_threshold")

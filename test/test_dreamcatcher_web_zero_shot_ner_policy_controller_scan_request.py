@@ -13,8 +13,9 @@
 
 
 import unittest
+import datetime
 
-from openapi_client.models.dreamcatcher_web_zero_shot_ner_policy_controller_scan_request import DreamcatcherWebZeroShotNERPolicyControllerScanRequest
+from dreamcatcher.models.dreamcatcher_web_zero_shot_ner_policy_controller_scan_request import DreamcatcherWebZeroShotNERPolicyControllerScanRequest  # noqa: E501
 
 class TestDreamcatcherWebZeroShotNERPolicyControllerScanRequest(unittest.TestCase):
     """DreamcatcherWebZeroShotNERPolicyControllerScanRequest unit test stubs"""
@@ -27,12 +28,12 @@ class TestDreamcatcherWebZeroShotNERPolicyControllerScanRequest(unittest.TestCas
 
     def make_instance(self, include_optional) -> DreamcatcherWebZeroShotNERPolicyControllerScanRequest:
         """Test DreamcatcherWebZeroShotNERPolicyControllerScanRequest
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `DreamcatcherWebZeroShotNERPolicyControllerScanRequest`
         """
-        model = DreamcatcherWebZeroShotNERPolicyControllerScanRequest()
+        model = DreamcatcherWebZeroShotNERPolicyControllerScanRequest()  # noqa: E501
         if include_optional:
             return DreamcatcherWebZeroShotNERPolicyControllerScanRequest(
                 content = ''

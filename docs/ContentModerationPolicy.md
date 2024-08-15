@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **bool** |  | [optional] 
@@ -20,7 +19,7 @@ json = "{}"
 # create an instance of ContentModerationPolicy from a JSON string
 content_moderation_policy_instance = ContentModerationPolicy.from_json(json)
 # print the JSON string representation of the object
-print(ContentModerationPolicy.to_json())
+print ContentModerationPolicy.to_json()
 
 # convert the object into a dict
 content_moderation_policy_dict = content_moderation_policy_instance.to_dict()

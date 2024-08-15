@@ -15,8 +15,9 @@ Get a DLP policy
 ### Example
 
 * Bearer Authentication (authorization):
-
 ```python
+import time
+import os
 import dreamcatcher
 from dreamcatcher.models.dlp_policy import DlpPolicy
 from dreamcatcher.rest import ApiException
@@ -58,7 +59,6 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **endpoint_name** | **str**| Endpoint name | 
@@ -78,7 +78,6 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Show DLP policy response |  -  |

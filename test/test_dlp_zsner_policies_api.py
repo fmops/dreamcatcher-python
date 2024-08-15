@@ -14,14 +14,14 @@
 
 import unittest
 
-from openapi_client.api.dlp_zsner_policies_api import DlpZsnerPoliciesApi
+from dreamcatcher.api.dlp_zsner_policies_api import DlpZsnerPoliciesApi  # noqa: E501
 
 
 class TestDlpZsnerPoliciesApi(unittest.TestCase):
     """DlpZsnerPoliciesApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = DlpZsnerPoliciesApi()
+        self.api = DlpZsnerPoliciesApi()  # noqa: E501
 
     def tearDown(self) -> None:
         pass
@@ -29,42 +29,49 @@ class TestDlpZsnerPoliciesApi(unittest.TestCase):
     def test_dreamcatcher_web_zero_shot_ner_policy_controller_create(self) -> None:
         """Test case for dreamcatcher_web_zero_shot_ner_policy_controller_create
 
-        Create a DLP ZSNER policy
+        Create a DLP ZSNER policy  # noqa: E501
         """
         pass
 
     def test_dreamcatcher_web_zero_shot_ner_policy_controller_delete(self) -> None:
         """Test case for dreamcatcher_web_zero_shot_ner_policy_controller_delete
 
-        Delete a DLP ZSNER policy
+        Delete a DLP ZSNER policy  # noqa: E501
         """
         pass
 
     def test_dreamcatcher_web_zero_shot_ner_policy_controller_scan(self) -> None:
         """Test case for dreamcatcher_web_zero_shot_ner_policy_controller_scan
 
-        Scan content with a DLP ZSNER policy
+        Scan content with a DLP ZSNER policy  # noqa: E501
+        """
+        pass
+
+    def test_dreamcatcher_web_zero_shot_ner_policy_controller_scan__2(self) -> None:
+        """Test case for dreamcatcher_web_zero_shot_ner_policy_controller_scan__2
+
+        Scan content with a DLP ZSNER policy  # noqa: E501
         """
         pass
 
     def test_dreamcatcher_web_zero_shot_ner_policy_controller_show(self) -> None:
         """Test case for dreamcatcher_web_zero_shot_ner_policy_controller_show
 
-        Get a DLP ZSNER policy
+        Get a DLP ZSNER policy  # noqa: E501
         """
         pass
 
     def test_dreamcatcher_web_zero_shot_ner_policy_controller_update(self) -> None:
         """Test case for dreamcatcher_web_zero_shot_ner_policy_controller_update
 
-        Update a DLP ZSNER policy
+        Update a DLP ZSNER policy  # noqa: E501
         """
         pass
 
     def test_dreamcatcher_web_zero_shot_ner_policy_controller_update__2(self) -> None:
         """Test case for dreamcatcher_web_zero_shot_ner_policy_controller_update__2
 
-        Update a DLP ZSNER policy
+        Update a DLP ZSNER policy  # noqa: E501
         """
         pass
 

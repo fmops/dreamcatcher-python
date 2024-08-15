@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **bool** |  | [optional] 
@@ -22,7 +21,7 @@ json = "{}"
 # create an instance of DlpZsnerPolicyParamsDlpZsnerPolicy from a JSON string
 dlp_zsner_policy_params_dlp_zsner_policy_instance = DlpZsnerPolicyParamsDlpZsnerPolicy.from_json(json)
 # print the JSON string representation of the object
-print(DlpZsnerPolicyParamsDlpZsnerPolicy.to_json())
+print DlpZsnerPolicyParamsDlpZsnerPolicy.to_json()
 
 # convert the object into a dict
 dlp_zsner_policy_params_dlp_zsner_policy_dict = dlp_zsner_policy_params_dlp_zsner_policy_instance.to_dict()

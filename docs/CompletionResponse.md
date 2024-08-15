@@ -3,7 +3,6 @@
 A completion response from the model.
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **choices** | [**List[CompletionResponseChoicesInner]**](CompletionResponseChoicesInner.md) |  | [optional] 
@@ -20,7 +19,7 @@ json = "{}"
 # create an instance of CompletionResponse from a JSON string
 completion_response_instance = CompletionResponse.from_json(json)
 # print the JSON string representation of the object
-print(CompletionResponse.to_json())
+print CompletionResponse.to_json()
 
 # convert the object into a dict
 completion_response_dict = completion_response_instance.to_dict()

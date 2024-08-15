@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **content_moderation_policies** | [**ContentModerationPolicy**](ContentModerationPolicy.md) |  | [optional] 
@@ -20,7 +19,7 @@ json = "{}"
 # create an instance of ShowEndpointResponse from a JSON string
 show_endpoint_response_instance = ShowEndpointResponse.from_json(json)
 # print the JSON string representation of the object
-print(ShowEndpointResponse.to_json())
+print ShowEndpointResponse.to_json()
 
 # convert the object into a dict
 show_endpoint_response_dict = show_endpoint_response_instance.to_dict()

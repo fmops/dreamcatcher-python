@@ -21,8 +21,9 @@ Create a DLP ZSNER policy
 ### Example
 
 * Bearer Authentication (authorization):
-
 ```python
+import time
+import os
 import dreamcatcher
 from dreamcatcher.models.dlp_zsner_policy import DlpZsnerPolicy
 from dreamcatcher.models.dlp_zsner_policy_params import DlpZsnerPolicyParams
@@ -65,7 +66,6 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **endpoint_name** | **str**| Endpoint name | 
@@ -85,7 +85,6 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Create DLP ZSNER policy response |  -  |
@@ -100,8 +99,9 @@ Delete a DLP ZSNER policy
 ### Example
 
 * Bearer Authentication (authorization):
-
 ```python
+import time
+import os
 import dreamcatcher
 from dreamcatcher.rest import ApiException
 from pprint import pprint
@@ -140,7 +140,6 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **endpoint_name** | **str**| Endpoint name | 
@@ -160,7 +159,6 @@ void (empty response body)
  - **Accept**: Not defined
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **204** | OK |  -  |
@@ -175,8 +173,9 @@ Scan content with a DLP ZSNER policy
 ### Example
 
 * Bearer Authentication (authorization):
-
 ```python
+import time
+import os
 import dreamcatcher
 from dreamcatcher.models.dreamcatcher_web_zero_shot_ner_policy_controller_scan200_response import DreamcatcherWebZeroShotNERPolicyControllerScan200Response
 from dreamcatcher.models.dreamcatcher_web_zero_shot_ner_policy_controller_scan_request import DreamcatcherWebZeroShotNERPolicyControllerScanRequest
@@ -220,7 +219,6 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **endpoint_name** | **str**| Endpoint name | 
@@ -241,7 +239,6 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Scan DLP ZSNER policy response |  -  |
@@ -256,8 +253,9 @@ Scan content with a DLP ZSNER policy
 ### Example
 
 * Bearer Authentication (authorization):
-
 ```python
+import time
+import os
 import dreamcatcher
 from dreamcatcher.models.dreamcatcher_web_zero_shot_ner_policy_controller_scan200_response import DreamcatcherWebZeroShotNERPolicyControllerScan200Response
 from dreamcatcher.models.dreamcatcher_web_zero_shot_ner_policy_controller_scan_request import DreamcatcherWebZeroShotNERPolicyControllerScanRequest
@@ -301,7 +299,6 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **endpoint_name** | **str**| Endpoint name | 
@@ -322,7 +319,6 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Scan DLP ZSNER policy response |  -  |
@@ -337,8 +333,9 @@ Get a DLP ZSNER policy
 ### Example
 
 * Bearer Authentication (authorization):
-
 ```python
+import time
+import os
 import dreamcatcher
 from dreamcatcher.models.dlp_zsner_policy import DlpZsnerPolicy
 from dreamcatcher.rest import ApiException
@@ -380,7 +377,6 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **endpoint_name** | **str**| Endpoint name | 
@@ -400,7 +396,6 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Show DLP ZSNER policy response |  -  |
@@ -415,8 +410,9 @@ Update a DLP ZSNER policy
 ### Example
 
 * Bearer Authentication (authorization):
-
 ```python
+import time
+import os
 import dreamcatcher
 from dreamcatcher.models.dlp_zsner_policy import DlpZsnerPolicy
 from dreamcatcher.models.dlp_zsner_policy_params import DlpZsnerPolicyParams
@@ -460,7 +456,6 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **endpoint_name** | **str**| Endpoint name | 
@@ -481,7 +476,6 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Update DLP ZSNER policy response |  -  |
@@ -496,8 +490,9 @@ Update a DLP ZSNER policy
 ### Example
 
 * Bearer Authentication (authorization):
-
 ```python
+import time
+import os
 import dreamcatcher
 from dreamcatcher.models.dlp_zsner_policy import DlpZsnerPolicy
 from dreamcatcher.models.dlp_zsner_policy_params import DlpZsnerPolicyParams
@@ -541,7 +536,6 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **endpoint_name** | **str**| Endpoint name | 
@@ -562,7 +556,6 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Update DLP ZSNER policy response |  -  |

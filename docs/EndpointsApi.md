@@ -16,8 +16,9 @@ List endpoints
 ### Example
 
 * Bearer Authentication (authorization):
-
 ```python
+import time
+import os
 import dreamcatcher
 from dreamcatcher.models.list_endpoint_response_inner import ListEndpointResponseInner
 from dreamcatcher.rest import ApiException
@@ -56,7 +57,6 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 
 
 ### Parameters
-
 This endpoint does not need any parameter.
 
 ### Return type
@@ -73,7 +73,6 @@ This endpoint does not need any parameter.
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | List endpoints response |  -  |
@@ -88,8 +87,9 @@ Get an endpoint
 ### Example
 
 * Bearer Authentication (authorization):
-
 ```python
+import time
+import os
 import dreamcatcher
 from dreamcatcher.models.show_endpoint_response import ShowEndpointResponse
 from dreamcatcher.rest import ApiException
@@ -130,7 +130,6 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Endpoint name | 
@@ -149,7 +148,6 @@ Name | Type | Description  | Notes
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Show endpoint response |  -  |

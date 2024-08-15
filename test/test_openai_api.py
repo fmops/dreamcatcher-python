@@ -14,14 +14,14 @@
 
 import unittest
 
-from openapi_client.api.openai_api import OpenaiApi
+from dreamcatcher.api.openai_api import OpenaiApi  # noqa: E501
 
 
 class TestOpenaiApi(unittest.TestCase):
     """OpenaiApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = OpenaiApi()
+        self.api = OpenaiApi()  # noqa: E501
 
     def tearDown(self) -> None:
         pass
@@ -29,28 +29,28 @@ class TestOpenaiApi(unittest.TestCase):
     def test_stubidity_open_ai_chat_completion_call(self) -> None:
         """Test case for stubidity_open_ai_chat_completion_call
 
-        Chat completion
+        Chat completion  # noqa: E501
         """
         pass
 
     def test_stubidity_open_ai_completion_call(self) -> None:
         """Test case for stubidity_open_ai_completion_call
 
-        Completion
+        Completion  # noqa: E501
         """
         pass
 
     def test_stubidity_open_ai_embedding_call(self) -> None:
         """Test case for stubidity_open_ai_embedding_call
 
-        Embedding
+        Embedding  # noqa: E501
         """
         pass
 
     def test_stubidity_open_ai_embedding_call__2(self) -> None:
         """Test case for stubidity_open_ai_embedding_call__2
 
-        Embedding
+        Embedding  # noqa: E501
         """
         pass
 

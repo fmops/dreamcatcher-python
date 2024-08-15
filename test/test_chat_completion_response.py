@@ -13,8 +13,9 @@
 
 
 import unittest
+import datetime
 
-from openapi_client.models.chat_completion_response import ChatCompletionResponse
+from dreamcatcher.models.chat_completion_response import ChatCompletionResponse  # noqa: E501
 
 class TestChatCompletionResponse(unittest.TestCase):
     """ChatCompletionResponse unit test stubs"""
@@ -27,17 +28,17 @@ class TestChatCompletionResponse(unittest.TestCase):
 
     def make_instance(self, include_optional) -> ChatCompletionResponse:
         """Test ChatCompletionResponse
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ChatCompletionResponse`
         """
-        model = ChatCompletionResponse()
+        model = ChatCompletionResponse()  # noqa: E501
         if include_optional:
             return ChatCompletionResponse(
                 choices = [
-                    openapi_client.models.chat_completion_response_choices_inner.Chat_completion_response_choices_inner(
-                        message = openapi_client.models.chat_completion_message.Chat completion message(
+                    dreamcatcher.models.chat_completion_response_choices_inner.Chat_completion_response_choices_inner(
+                        message = dreamcatcher.models.chat_completion_message.Chat completion message(
                             content = '', 
                             role = '', ), )
                     ],

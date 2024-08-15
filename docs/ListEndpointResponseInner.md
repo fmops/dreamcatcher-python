@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | [optional] 
@@ -17,7 +16,7 @@ json = "{}"
 # create an instance of ListEndpointResponseInner from a JSON string
 list_endpoint_response_inner_instance = ListEndpointResponseInner.from_json(json)
 # print the JSON string representation of the object
-print(ListEndpointResponseInner.to_json())
+print ListEndpointResponseInner.to_json()
 
 # convert the object into a dict
 list_endpoint_response_inner_dict = list_endpoint_response_inner_instance.to_dict()

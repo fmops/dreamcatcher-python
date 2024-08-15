@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **violates_policy** | **bool** |  | [optional] 
@@ -17,7 +16,7 @@ json = "{}"
 # create an instance of DreamcatcherWebZeroShotNERPolicyControllerScan200Response from a JSON string
 dreamcatcher_web_zero_shot_ner_policy_controller_scan200_response_instance = DreamcatcherWebZeroShotNERPolicyControllerScan200Response.from_json(json)
 # print the JSON string representation of the object
-print(DreamcatcherWebZeroShotNERPolicyControllerScan200Response.to_json())
+print DreamcatcherWebZeroShotNERPolicyControllerScan200Response.to_json()
 
 # convert the object into a dict
 dreamcatcher_web_zero_shot_ner_policy_controller_scan200_response_dict = dreamcatcher_web_zero_shot_ner_policy_controller_scan200_response_instance.to_dict()

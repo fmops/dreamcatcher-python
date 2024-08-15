@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **embedding** | **List[float]** |  | [optional] 
@@ -17,7 +16,7 @@ json = "{}"
 # create an instance of EmbeddingResponseInner from a JSON string
 embedding_response_inner_instance = EmbeddingResponseInner.from_json(json)
 # print the JSON string representation of the object
-print(EmbeddingResponseInner.to_json())
+print EmbeddingResponseInner.to_json()
 
 # convert the object into a dict
 embedding_response_inner_dict = embedding_response_inner_instance.to_dict()

@@ -14,14 +14,14 @@
 
 import unittest
 
-from openapi_client.api.endpoints_api import EndpointsApi
+from dreamcatcher.api.endpoints_api import EndpointsApi  # noqa: E501
 
 
 class TestEndpointsApi(unittest.TestCase):
     """EndpointsApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = EndpointsApi()
+        self.api = EndpointsApi()  # noqa: E501
 
     def tearDown(self) -> None:
         pass
@@ -29,14 +29,14 @@ class TestEndpointsApi(unittest.TestCase):
     def test_dreamcatcher_web_endpoint_controller_index(self) -> None:
         """Test case for dreamcatcher_web_endpoint_controller_index
 
-        List endpoints
+        List endpoints  # noqa: E501
         """
         pass
 
     def test_dreamcatcher_web_endpoint_controller_show(self) -> None:
         """Test case for dreamcatcher_web_endpoint_controller_show
 
-        Get an endpoint
+        Get an endpoint  # noqa: E501
         """
         pass
 

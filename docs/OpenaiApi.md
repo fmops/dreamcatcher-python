@@ -17,8 +17,9 @@ Chat completion
 
 ### Example
 
-
 ```python
+import time
+import os
 import dreamcatcher
 from dreamcatcher.models.chat_completion_response import ChatCompletionResponse
 from dreamcatcher.models.create_chat_completion import CreateChatCompletion
@@ -51,7 +52,6 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **create_chat_completion** | [**CreateChatCompletion**](CreateChatCompletion.md)| Chat completion params | [optional] 
@@ -70,7 +70,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Chat completion response |  -  |
@@ -84,8 +83,9 @@ Completion
 
 ### Example
 
-
 ```python
+import time
+import os
 import dreamcatcher
 from dreamcatcher.models.completion import Completion
 from dreamcatcher.models.completion_response import CompletionResponse
@@ -118,7 +118,6 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **completion** | [**Completion**](Completion.md)| Completion params | [optional] 
@@ -137,7 +136,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Completion response |  -  |
@@ -151,8 +149,9 @@ Embedding
 
 ### Example
 
-
 ```python
+import time
+import os
 import dreamcatcher
 from dreamcatcher.models.embedding import Embedding
 from dreamcatcher.models.embedding_response_inner import EmbeddingResponseInner
@@ -185,7 +184,6 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **embedding** | [**Embedding**](Embedding.md)| Embedding params | [optional] 
@@ -204,7 +202,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Embedding response |  -  |
@@ -218,8 +215,9 @@ Embedding
 
 ### Example
 
-
 ```python
+import time
+import os
 import dreamcatcher
 from dreamcatcher.models.embedding import Embedding
 from dreamcatcher.models.embedding_response_inner import EmbeddingResponseInner
@@ -252,7 +250,6 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **embedding** | [**Embedding**](Embedding.md)| Embedding params | [optional] 
@@ -271,7 +268,6 @@ No authorization required
  - **Accept**: application/json
 
 ### HTTP response details
-
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | Embedding response |  -  |

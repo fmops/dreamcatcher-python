@@ -13,8 +13,9 @@
 
 
 import unittest
+import datetime
 
-from openapi_client.models.embedding import Embedding
+from dreamcatcher.models.embedding import Embedding  # noqa: E501
 
 class TestEmbedding(unittest.TestCase):
     """Embedding unit test stubs"""
@@ -27,12 +28,12 @@ class TestEmbedding(unittest.TestCase):
 
     def make_instance(self, include_optional) -> Embedding:
         """Test Embedding
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `Embedding`
         """
-        model = Embedding()
+        model = Embedding()  # noqa: E501
         if include_optional:
             return Embedding(
                 input = '',

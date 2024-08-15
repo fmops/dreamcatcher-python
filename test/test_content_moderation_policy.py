@@ -13,8 +13,9 @@
 
 
 import unittest
+import datetime
 
-from openapi_client.models.content_moderation_policy import ContentModerationPolicy
+from dreamcatcher.models.content_moderation_policy import ContentModerationPolicy  # noqa: E501
 
 class TestContentModerationPolicy(unittest.TestCase):
     """ContentModerationPolicy unit test stubs"""
@@ -27,12 +28,12 @@ class TestContentModerationPolicy(unittest.TestCase):
 
     def make_instance(self, include_optional) -> ContentModerationPolicy:
         """Test ContentModerationPolicy
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `ContentModerationPolicy`
         """
-        model = ContentModerationPolicy()
+        model = ContentModerationPolicy()  # noqa: E501
         if include_optional:
             return ContentModerationPolicy(
                 active = True,

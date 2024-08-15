@@ -13,8 +13,9 @@
 
 
 import unittest
+import datetime
 
-from openapi_client.models.dlp_policy import DlpPolicy
+from dreamcatcher.models.dlp_policy import DlpPolicy  # noqa: E501
 
 class TestDlpPolicy(unittest.TestCase):
     """DlpPolicy unit test stubs"""
@@ -27,16 +28,16 @@ class TestDlpPolicy(unittest.TestCase):
 
     def make_instance(self, include_optional) -> DlpPolicy:
         """Test DlpPolicy
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `DlpPolicy`
         """
-        model = DlpPolicy()
+        model = DlpPolicy()  # noqa: E501
         if include_optional:
             return DlpPolicy(
                 active = True,
-                anonymizer = openapi_client.models.dlp_policy_anonymizer.DlpPolicy_anonymizer(
+                anonymizer = dreamcatcher.models.dlp_policy_anonymizer.DlpPolicy_anonymizer(
                     type = 'replace', ),
                 entities = [
                     'MEDICAL_LICENSE'

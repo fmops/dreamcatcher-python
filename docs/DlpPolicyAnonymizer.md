@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **str** |  | [optional] 
@@ -17,7 +16,7 @@ json = "{}"
 # create an instance of DlpPolicyAnonymizer from a JSON string
 dlp_policy_anonymizer_instance = DlpPolicyAnonymizer.from_json(json)
 # print the JSON string representation of the object
-print(DlpPolicyAnonymizer.to_json())
+print DlpPolicyAnonymizer.to_json()
 
 # convert the object into a dict
 dlp_policy_anonymizer_dict = dlp_policy_anonymizer_instance.to_dict()

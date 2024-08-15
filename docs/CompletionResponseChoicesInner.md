@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **text** | **str** |  | [optional] 
@@ -17,7 +16,7 @@ json = "{}"
 # create an instance of CompletionResponseChoicesInner from a JSON string
 completion_response_choices_inner_instance = CompletionResponseChoicesInner.from_json(json)
 # print the JSON string representation of the object
-print(CompletionResponseChoicesInner.to_json())
+print CompletionResponseChoicesInner.to_json()
 
 # convert the object into a dict
 completion_response_choices_inner_dict = completion_response_choices_inner_instance.to_dict()

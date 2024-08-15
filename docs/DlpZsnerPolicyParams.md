@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **dlp_zsner_policy** | [**DlpZsnerPolicyParamsDlpZsnerPolicy**](DlpZsnerPolicyParamsDlpZsnerPolicy.md) |  | [optional] 
@@ -17,7 +16,7 @@ json = "{}"
 # create an instance of DlpZsnerPolicyParams from a JSON string
 dlp_zsner_policy_params_instance = DlpZsnerPolicyParams.from_json(json)
 # print the JSON string representation of the object
-print(DlpZsnerPolicyParams.to_json())
+print DlpZsnerPolicyParams.to_json()
 
 # convert the object into a dict
 dlp_zsner_policy_params_dict = dlp_zsner_policy_params_instance.to_dict()

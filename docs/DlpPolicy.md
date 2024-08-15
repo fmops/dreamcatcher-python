@@ -2,7 +2,6 @@
 
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **bool** |  | [optional] 
@@ -22,7 +21,7 @@ json = "{}"
 # create an instance of DlpPolicy from a JSON string
 dlp_policy_instance = DlpPolicy.from_json(json)
 # print the JSON string representation of the object
-print(DlpPolicy.to_json())
+print DlpPolicy.to_json()
 
 # convert the object into a dict
 dlp_policy_dict = dlp_policy_instance.to_dict()

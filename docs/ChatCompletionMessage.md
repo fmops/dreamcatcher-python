@@ -3,7 +3,6 @@
 A chat message in a conversation.
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **content** | **str** |  | 
@@ -19,7 +18,7 @@ json = "{}"
 # create an instance of ChatCompletionMessage from a JSON string
 chat_completion_message_instance = ChatCompletionMessage.from_json(json)
 # print the JSON string representation of the object
-print(ChatCompletionMessage.to_json())
+print ChatCompletionMessage.to_json()
 
 # convert the object into a dict
 chat_completion_message_dict = chat_completion_message_instance.to_dict()

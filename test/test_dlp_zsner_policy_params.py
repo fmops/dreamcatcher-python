@@ -13,8 +13,9 @@
 
 
 import unittest
+import datetime
 
-from openapi_client.models.dlp_zsner_policy_params import DlpZsnerPolicyParams
+from dreamcatcher.models.dlp_zsner_policy_params import DlpZsnerPolicyParams  # noqa: E501
 
 class TestDlpZsnerPolicyParams(unittest.TestCase):
     """DlpZsnerPolicyParams unit test stubs"""
@@ -27,20 +28,20 @@ class TestDlpZsnerPolicyParams(unittest.TestCase):
 
     def make_instance(self, include_optional) -> DlpZsnerPolicyParams:
         """Test DlpZsnerPolicyParams
-            include_optional is a boolean, when False only required
+            include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
         # uncomment below to create an instance of `DlpZsnerPolicyParams`
         """
-        model = DlpZsnerPolicyParams()
+        model = DlpZsnerPolicyParams()  # noqa: E501
         if include_optional:
             return DlpZsnerPolicyParams(
-                dlp_zsner_policy = openapi_client.models.dlp_zsner_policy_params_dlp_zsner_policy.DlpZsnerPolicyParams_dlp_zsner_policy(
+                dlp_zsner_policy = dreamcatcher.models.dlp_zsner_policy_params_dlp_zsner_policy.DlpZsnerPolicyParams_dlp_zsner_policy(
                     active = True, 
-                    anonymizer = openapi_client.models.dlp_policy_anonymizer.DlpPolicy_anonymizer(
+                    anonymizer = dreamcatcher.models.dlp_policy_anonymizer.DlpPolicy_anonymizer(
                         type = 'replace', ), 
                     entities = [
-                        openapi_client.models.dlp_zsner_policy_params_dlp_zsner_policy_entities_inner.DlpZsnerPolicyParams_dlp_zsner_policy_entities_inner(
+                        dreamcatcher.models.dlp_zsner_policy_params_dlp_zsner_policy_entities_inner.DlpZsnerPolicyParams_dlp_zsner_policy_entities_inner(
                             entity = '', )
                         ], 
                     name = '', 
