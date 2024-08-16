@@ -25,7 +25,7 @@ async def main():
             api_response = await api_instance.dreamcatcher_web_zero_shot_ner_policy_controller_scan(
                 endpoint_name, id,
                 DreamcatcherWebPresidioPolicyControllerScanRequest(
-                    content="This is a test message. It contains a credit card number 4111 1111 1111 1111 and a social security number 123-45-6789. I like fords."
+                    content="This is a test message. It contains a credit card number 4111 1111 1111 1111 and a social security number 123-45-6789."
                 )
             )
             print("The response of DlpPoliciesApi->dreamcatcher_web_presidio_policy_controller_show:\n")
