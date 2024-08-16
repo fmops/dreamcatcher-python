@@ -55,10 +55,11 @@ class TestShowEndpointResponse(unittest.TestCase):
                     score_threshold = 1.337, ),
                 dlp_zsner_policies = dreamcatcher.models.dlp_zsner_policy.DlpZsnerPolicy(
                     active = True, 
-                    anonymizer = dreamcatcher.models.dlp_zsner_policy_anonymizer.DlpZsnerPolicy_anonymizer(
+                    anonymizer = dreamcatcher.models.dlp_policy_anonymizer.DlpPolicy_anonymizer(
                         type = 'replace', ), 
                     entities = [
-                        ''
+                        dreamcatcher.models.dlp_zsner_policy_entities_inner.DlpZsnerPolicy_entities_inner(
+                            entity = '', )
                         ], 
                     name = '', 
                     response = 'block', 

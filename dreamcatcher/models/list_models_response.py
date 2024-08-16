@@ -18,15 +18,17 @@ import re  # noqa: F401
 import json
 
 
-from typing import Optional
-from pydantic import BaseModel, StrictBool
+from typing import List, Optional
+from pydantic import BaseModel, StrictStr, conlist
+from dreamcatcher.models.list_models_response_data_inner import ListModelsResponseDataInner
 
-class DreamcatcherWebZeroShotNERPolicyControllerScan200Response(BaseModel):
+class ListModelsResponse(BaseModel):
     """
-    DreamcatcherWebZeroShotNERPolicyControllerScan200Response
+    ListModelsResponse
     """
-    violates_policy: Optional[StrictBool] = None
-    __properties = ["violates_policy"]
+    data: Optional[conlist(ListModelsResponseDataInner)] = None
+    object: Optional[StrictStr] = None
+    __properties = ["data", "object"]
 
     class Config:
         """Pydantic configuration"""
@@ -42,8 +44,8 @@ class DreamcatcherWebZeroShotNERPolicyControllerScan200Response(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> DreamcatcherWebZeroShotNERPolicyControllerScan200Response:
-        """Create an instance of DreamcatcherWebZeroShotNERPolicyControllerScan200Response from a JSON string"""
+    def from_json(cls, json_str: str) -> ListModelsResponse:
+        """Create an instance of ListModelsResponse from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -52,19 +54,27 @@ class DreamcatcherWebZeroShotNERPolicyControllerScan200Response(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
+        # override the default output from pydantic by calling `to_dict()` of each item in data (list)
+        _items = []
+        if self.data:
+            for _item in self.data:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['data'] = _items
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> DreamcatcherWebZeroShotNERPolicyControllerScan200Response:
-        """Create an instance of DreamcatcherWebZeroShotNERPolicyControllerScan200Response from a dict"""
+    def from_dict(cls, obj: dict) -> ListModelsResponse:
+        """Create an instance of ListModelsResponse from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return DreamcatcherWebZeroShotNERPolicyControllerScan200Response.parse_obj(obj)
+            return ListModelsResponse.parse_obj(obj)
 
-        _obj = DreamcatcherWebZeroShotNERPolicyControllerScan200Response.parse_obj({
-            "violates_policy": obj.get("violates_policy")
+        _obj = ListModelsResponse.parse_obj({
+            "data": [ListModelsResponseDataInner.from_dict(_item) for _item in obj.get("data")] if obj.get("data") is not None else None,
+            "object": obj.get("object")
         })
         return _obj
 

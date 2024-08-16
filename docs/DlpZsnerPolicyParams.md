@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**dlp_zsner_policy** | [**DlpZsnerPolicyParamsDlpZsnerPolicy**](DlpZsnerPolicyParamsDlpZsnerPolicy.md) |  | [optional] 
+**dlp_zsner_policy** | [**DlpZsnerPolicy**](DlpZsnerPolicy.md) |  | [optional] 
 
 ## Example
 

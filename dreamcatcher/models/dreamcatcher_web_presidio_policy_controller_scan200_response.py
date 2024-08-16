@@ -19,14 +19,14 @@ import json
 
 
 from typing import Optional
-from pydantic import BaseModel, StrictStr
+from pydantic import BaseModel, StrictBool
 
-class DreamcatcherWebZeroShotNERPolicyControllerScanRequest(BaseModel):
+class DreamcatcherWebPresidioPolicyControllerScan200Response(BaseModel):
     """
-    DreamcatcherWebZeroShotNERPolicyControllerScanRequest
+    DreamcatcherWebPresidioPolicyControllerScan200Response
     """
-    content: Optional[StrictStr] = None
-    __properties = ["content"]
+    violates_policy: Optional[StrictBool] = None
+    __properties = ["violates_policy"]
 
     class Config:
         """Pydantic configuration"""
@@ -42,8 +42,8 @@ class DreamcatcherWebZeroShotNERPolicyControllerScanRequest(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> DreamcatcherWebZeroShotNERPolicyControllerScanRequest:
-        """Create an instance of DreamcatcherWebZeroShotNERPolicyControllerScanRequest from a JSON string"""
+    def from_json(cls, json_str: str) -> DreamcatcherWebPresidioPolicyControllerScan200Response:
+        """Create an instance of DreamcatcherWebPresidioPolicyControllerScan200Response from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -55,16 +55,16 @@ class DreamcatcherWebZeroShotNERPolicyControllerScanRequest(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> DreamcatcherWebZeroShotNERPolicyControllerScanRequest:
-        """Create an instance of DreamcatcherWebZeroShotNERPolicyControllerScanRequest from a dict"""
+    def from_dict(cls, obj: dict) -> DreamcatcherWebPresidioPolicyControllerScan200Response:
+        """Create an instance of DreamcatcherWebPresidioPolicyControllerScan200Response from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return DreamcatcherWebZeroShotNERPolicyControllerScanRequest.parse_obj(obj)
+            return DreamcatcherWebPresidioPolicyControllerScan200Response.parse_obj(obj)
 
-        _obj = DreamcatcherWebZeroShotNERPolicyControllerScanRequest.parse_obj({
-            "content": obj.get("content")
+        _obj = DreamcatcherWebPresidioPolicyControllerScan200Response.parse_obj({
+            "violates_policy": obj.get("violates_policy")
         })
         return _obj
 

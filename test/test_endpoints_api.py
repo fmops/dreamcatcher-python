@@ -33,6 +33,34 @@ class TestEndpointsApi(unittest.TestCase):
         """
         pass
 
+    def test_dreamcatcher_web_endpoint_controller_invoke_chat_completions(self) -> None:
+        """Test case for dreamcatcher_web_endpoint_controller_invoke_chat_completions
+
+        Invoke a chat completion  # noqa: E501
+        """
+        pass
+
+    def test_dreamcatcher_web_endpoint_controller_invoke_chat_completions__2(self) -> None:
+        """Test case for dreamcatcher_web_endpoint_controller_invoke_chat_completions__2
+
+        Invoke a chat completion  # noqa: E501
+        """
+        pass
+
+    def test_dreamcatcher_web_endpoint_controller_invoke_completions(self) -> None:
+        """Test case for dreamcatcher_web_endpoint_controller_invoke_completions
+
+        Invoke a completion  # noqa: E501
+        """
+        pass
+
+    def test_dreamcatcher_web_endpoint_controller_models(self) -> None:
+        """Test case for dreamcatcher_web_endpoint_controller_models
+
+        Lists upstreams (ie models) for an endpoint  # noqa: E501
+        """
+        pass
+
     def test_dreamcatcher_web_endpoint_controller_show(self) -> None:
         """Test case for dreamcatcher_web_endpoint_controller_show
 

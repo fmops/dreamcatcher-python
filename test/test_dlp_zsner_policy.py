@@ -37,10 +37,11 @@ class TestDlpZsnerPolicy(unittest.TestCase):
         if include_optional:
             return DlpZsnerPolicy(
                 active = True,
-                anonymizer = dreamcatcher.models.dlp_zsner_policy_anonymizer.DlpZsnerPolicy_anonymizer(
+                anonymizer = dreamcatcher.models.dlp_policy_anonymizer.DlpPolicy_anonymizer(
                     type = 'replace', ),
                 entities = [
-                    ''
+                    dreamcatcher.models.dlp_zsner_policy_entities_inner.DlpZsnerPolicy_entities_inner(
+                        entity = '', )
                     ],
                 name = '',
                 response = 'block',

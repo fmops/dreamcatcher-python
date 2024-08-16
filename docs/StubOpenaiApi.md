@@ -1,13 +1,13 @@
-# dreamcatcher.OpenaiApi
+# dreamcatcher.StubOpenaiApi
 
-All URIs are relative to *http://localhost:4000*
+All URIs are relative to *https://dreamcatcher.blueteam.ai*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**stubidity_open_ai_chat_completion_call**](OpenaiApi.md#stubidity_open_ai_chat_completion_call) | **POST** /api/v1/stub/openai/v1/chat/completions | Chat completion
-[**stubidity_open_ai_completion_call**](OpenaiApi.md#stubidity_open_ai_completion_call) | **POST** /api/v1/stub/openai/v1/completions | Completion
-[**stubidity_open_ai_embedding_call**](OpenaiApi.md#stubidity_open_ai_embedding_call) | **POST** /api/v1/stub/openai/v1/embeddings | Embedding
-[**stubidity_open_ai_embedding_call__2**](OpenaiApi.md#stubidity_open_ai_embedding_call__2) | **POST** /api/v1/stub/openai/v1/engines/{model} | Embedding
+[**stubidity_open_ai_chat_completion_call**](StubOpenaiApi.md#stubidity_open_ai_chat_completion_call) | **POST** /api/v1/stub/openai/v1/chat/completions | Chat completion
+[**stubidity_open_ai_completion_call**](StubOpenaiApi.md#stubidity_open_ai_completion_call) | **POST** /api/v1/stub/openai/v1/completions | Completion
+[**stubidity_open_ai_embedding_call**](StubOpenaiApi.md#stubidity_open_ai_embedding_call) | **POST** /api/v1/stub/openai/v1/embeddings | Embedding
+[**stubidity_open_ai_embedding_call__2**](StubOpenaiApi.md#stubidity_open_ai_embedding_call__2) | **POST** /api/v1/stub/openai/v1/engines/{model} | Embedding
 
 
 # **stubidity_open_ai_chat_completion_call**
@@ -26,26 +26,26 @@ from dreamcatcher.models.create_chat_completion import CreateChatCompletion
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:4000
+# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "http://localhost:4000"
+    host = "https://dreamcatcher.blueteam.ai"
 )
 
 
 # Enter a context with an instance of the API client
 async with dreamcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dreamcatcher.OpenaiApi(api_client)
+    api_instance = dreamcatcher.StubOpenaiApi(api_client)
     create_chat_completion = dreamcatcher.CreateChatCompletion() # CreateChatCompletion | Chat completion params (optional)
 
     try:
         # Chat completion
         api_response = await api_instance.stubidity_open_ai_chat_completion_call(create_chat_completion=create_chat_completion)
-        print("The response of OpenaiApi->stubidity_open_ai_chat_completion_call:\n")
+        print("The response of StubOpenaiApi->stubidity_open_ai_chat_completion_call:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OpenaiApi->stubidity_open_ai_chat_completion_call: %s\n" % e)
+        print("Exception when calling StubOpenaiApi->stubidity_open_ai_chat_completion_call: %s\n" % e)
 ```
 
 
@@ -92,26 +92,26 @@ from dreamcatcher.models.completion_response import CompletionResponse
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:4000
+# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "http://localhost:4000"
+    host = "https://dreamcatcher.blueteam.ai"
 )
 
 
 # Enter a context with an instance of the API client
 async with dreamcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dreamcatcher.OpenaiApi(api_client)
+    api_instance = dreamcatcher.StubOpenaiApi(api_client)
     completion = dreamcatcher.Completion() # Completion | Completion params (optional)
 
     try:
         # Completion
         api_response = await api_instance.stubidity_open_ai_completion_call(completion=completion)
-        print("The response of OpenaiApi->stubidity_open_ai_completion_call:\n")
+        print("The response of StubOpenaiApi->stubidity_open_ai_completion_call:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OpenaiApi->stubidity_open_ai_completion_call: %s\n" % e)
+        print("Exception when calling StubOpenaiApi->stubidity_open_ai_completion_call: %s\n" % e)
 ```
 
 
@@ -158,26 +158,26 @@ from dreamcatcher.models.embedding_response_inner import EmbeddingResponseInner
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:4000
+# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "http://localhost:4000"
+    host = "https://dreamcatcher.blueteam.ai"
 )
 
 
 # Enter a context with an instance of the API client
 async with dreamcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dreamcatcher.OpenaiApi(api_client)
+    api_instance = dreamcatcher.StubOpenaiApi(api_client)
     embedding = dreamcatcher.Embedding() # Embedding | Embedding params (optional)
 
     try:
         # Embedding
         api_response = await api_instance.stubidity_open_ai_embedding_call(embedding=embedding)
-        print("The response of OpenaiApi->stubidity_open_ai_embedding_call:\n")
+        print("The response of StubOpenaiApi->stubidity_open_ai_embedding_call:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OpenaiApi->stubidity_open_ai_embedding_call: %s\n" % e)
+        print("Exception when calling StubOpenaiApi->stubidity_open_ai_embedding_call: %s\n" % e)
 ```
 
 
@@ -224,26 +224,26 @@ from dreamcatcher.models.embedding_response_inner import EmbeddingResponseInner
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to http://localhost:4000
+# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "http://localhost:4000"
+    host = "https://dreamcatcher.blueteam.ai"
 )
 
 
 # Enter a context with an instance of the API client
 async with dreamcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = dreamcatcher.OpenaiApi(api_client)
+    api_instance = dreamcatcher.StubOpenaiApi(api_client)
     embedding = dreamcatcher.Embedding() # Embedding | Embedding params (optional)
 
     try:
         # Embedding
         api_response = await api_instance.stubidity_open_ai_embedding_call__2(embedding=embedding)
-        print("The response of OpenaiApi->stubidity_open_ai_embedding_call__2:\n")
+        print("The response of StubOpenaiApi->stubidity_open_ai_embedding_call__2:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OpenaiApi->stubidity_open_ai_embedding_call__2: %s\n" % e)
+        print("Exception when calling StubOpenaiApi->stubidity_open_ai_embedding_call__2: %s\n" % e)
 ```
 
 

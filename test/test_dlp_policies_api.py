@@ -26,10 +26,45 @@ class TestDlpPoliciesApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_dreamcatcher_web_presidio_policy_controller_create(self) -> None:
+        """Test case for dreamcatcher_web_presidio_policy_controller_create
+
+        Create a DLP policy  # noqa: E501
+        """
+        pass
+
+    def test_dreamcatcher_web_presidio_policy_controller_delete(self) -> None:
+        """Test case for dreamcatcher_web_presidio_policy_controller_delete
+
+        Delete a DLP policy  # noqa: E501
+        """
+        pass
+
+    def test_dreamcatcher_web_presidio_policy_controller_scan(self) -> None:
+        """Test case for dreamcatcher_web_presidio_policy_controller_scan
+
+        Scan content with a DLP policy  # noqa: E501
+        """
+        pass
+
     def test_dreamcatcher_web_presidio_policy_controller_show(self) -> None:
         """Test case for dreamcatcher_web_presidio_policy_controller_show
 
         Get a DLP policy  # noqa: E501
+        """
+        pass
+
+    def test_dreamcatcher_web_presidio_policy_controller_update(self) -> None:
+        """Test case for dreamcatcher_web_presidio_policy_controller_update
+
+        Update a DLP policy  # noqa: E501
+        """
+        pass
+
+    def test_dreamcatcher_web_presidio_policy_controller_update__2(self) -> None:
+        """Test case for dreamcatcher_web_presidio_policy_controller_update__2
+
+        Update a DLP policy  # noqa: E501
         """
         pass
 

@@ -14,14 +14,14 @@
 
 import unittest
 
-from dreamcatcher.api.openai_api import OpenaiApi  # noqa: E501
+from dreamcatcher.api.stub_openai_api import StubOpenaiApi  # noqa: E501
 
 
-class TestOpenaiApi(unittest.TestCase):
-    """OpenaiApi unit test stubs"""
+class TestStubOpenaiApi(unittest.TestCase):
+    """StubOpenaiApi unit test stubs"""
 
     def setUp(self) -> None:
-        self.api = OpenaiApi()  # noqa: E501
+        self.api = StubOpenaiApi()  # noqa: E501
 
     def tearDown(self) -> None:
         pass

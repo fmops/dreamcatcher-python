@@ -47,13 +47,6 @@ class TestDlpZsnerPoliciesApi(unittest.TestCase):
         """
         pass
 
-    def test_dreamcatcher_web_zero_shot_ner_policy_controller_scan__2(self) -> None:
-        """Test case for dreamcatcher_web_zero_shot_ner_policy_controller_scan__2
-
-        Scan content with a DLP ZSNER policy  # noqa: E501
-        """
-        pass
-
     def test_dreamcatcher_web_zero_shot_ner_policy_controller_show(self) -> None:
         """Test case for dreamcatcher_web_zero_shot_ner_policy_controller_show
 

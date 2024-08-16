@@ -20,15 +20,16 @@ import json
 
 from typing import List, Optional, Union
 from pydantic import BaseModel, StrictBool, StrictFloat, StrictInt, StrictStr, conlist, validator
-from dreamcatcher.models.dlp_zsner_policy_anonymizer import DlpZsnerPolicyAnonymizer
+from dreamcatcher.models.dlp_policy_anonymizer import DlpPolicyAnonymizer
+from dreamcatcher.models.dlp_zsner_policy_entities_inner import DlpZsnerPolicyEntitiesInner
 
 class DlpZsnerPolicy(BaseModel):
     """
     DlpZsnerPolicy
     """
     active: Optional[StrictBool] = None
-    anonymizer: Optional[DlpZsnerPolicyAnonymizer] = None
-    entities: Optional[conlist(StrictStr)] = None
+    anonymizer: Optional[DlpPolicyAnonymizer] = None
+    entities: Optional[conlist(DlpZsnerPolicyEntitiesInner)] = None
     name: Optional[StrictStr] = None
     response: Optional[StrictStr] = None
     score_threshold: Optional[Union[StrictFloat, StrictInt]] = None
@@ -71,6 +72,13 @@ class DlpZsnerPolicy(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of anonymizer
         if self.anonymizer:
             _dict['anonymizer'] = self.anonymizer.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in entities (list)
+        _items = []
+        if self.entities:
+            for _item in self.entities:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['entities'] = _items
         return _dict
 
     @classmethod
@@ -84,8 +92,8 @@ class DlpZsnerPolicy(BaseModel):
 
         _obj = DlpZsnerPolicy.parse_obj({
             "active": obj.get("active"),
-            "anonymizer": DlpZsnerPolicyAnonymizer.from_dict(obj.get("anonymizer")) if obj.get("anonymizer") is not None else None,
-            "entities": obj.get("entities"),
+            "anonymizer": DlpPolicyAnonymizer.from_dict(obj.get("anonymizer")) if obj.get("anonymizer") is not None else None,
+            "entities": [DlpZsnerPolicyEntitiesInner.from_dict(_item) for _item in obj.get("entities")] if obj.get("entities") is not None else None,
             "name": obj.get("name"),
             "response": obj.get("response"),
             "score_threshold": obj.get("score_threshold")

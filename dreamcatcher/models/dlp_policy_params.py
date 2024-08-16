@@ -19,14 +19,15 @@ import json
 
 
 from typing import Optional
-from pydantic import BaseModel, StrictStr
+from pydantic import BaseModel
+from dreamcatcher.models.dlp_policy import DlpPolicy
 
-class DlpZsnerPolicyParamsDlpZsnerPolicyEntitiesInner(BaseModel):
+class DlpPolicyParams(BaseModel):
     """
-    DlpZsnerPolicyParamsDlpZsnerPolicyEntitiesInner
+    DlpPolicyParams
     """
-    entity: Optional[StrictStr] = None
-    __properties = ["entity"]
+    dlp_policy: Optional[DlpPolicy] = None
+    __properties = ["dlp_policy"]
 
     class Config:
         """Pydantic configuration"""
@@ -42,8 +43,8 @@ class DlpZsnerPolicyParamsDlpZsnerPolicyEntitiesInner(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> DlpZsnerPolicyParamsDlpZsnerPolicyEntitiesInner:
-        """Create an instance of DlpZsnerPolicyParamsDlpZsnerPolicyEntitiesInner from a JSON string"""
+    def from_json(cls, json_str: str) -> DlpPolicyParams:
+        """Create an instance of DlpPolicyParams from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -52,19 +53,22 @@ class DlpZsnerPolicyParamsDlpZsnerPolicyEntitiesInner(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
+        # override the default output from pydantic by calling `to_dict()` of dlp_policy
+        if self.dlp_policy:
+            _dict['dlp_policy'] = self.dlp_policy.to_dict()
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> DlpZsnerPolicyParamsDlpZsnerPolicyEntitiesInner:
-        """Create an instance of DlpZsnerPolicyParamsDlpZsnerPolicyEntitiesInner from a dict"""
+    def from_dict(cls, obj: dict) -> DlpPolicyParams:
+        """Create an instance of DlpPolicyParams from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return DlpZsnerPolicyParamsDlpZsnerPolicyEntitiesInner.parse_obj(obj)
+            return DlpPolicyParams.parse_obj(obj)
 
-        _obj = DlpZsnerPolicyParamsDlpZsnerPolicyEntitiesInner.parse_obj({
-            "entity": obj.get("entity")
+        _obj = DlpPolicyParams.parse_obj({
+            "dlp_policy": DlpPolicy.from_dict(obj.get("dlp_policy")) if obj.get("dlp_policy") is not None else None
         })
         return _obj
 

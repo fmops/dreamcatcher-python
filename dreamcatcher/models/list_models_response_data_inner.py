@@ -18,25 +18,18 @@ import re  # noqa: F401
 import json
 
 
-from typing import Optional
-from pydantic import BaseModel, StrictStr, validator
+from typing import Optional, Union
+from pydantic import BaseModel, StrictFloat, StrictInt, StrictStr
 
-class DlpZsnerPolicyAnonymizer(BaseModel):
+class ListModelsResponseDataInner(BaseModel):
     """
-    DlpZsnerPolicyAnonymizer
+    ListModelsResponseDataInner
     """
-    type: Optional[StrictStr] = None
-    __properties = ["type"]
-
-    @validator('type')
-    def type_validate_enum(cls, value):
-        """Validates the enum"""
-        if value is None:
-            return value
-
-        if value not in ('replace', 'encrypt'):
-            raise ValueError("must be one of enum values ('replace', 'encrypt')")
-        return value
+    created: Optional[Union[StrictFloat, StrictInt]] = None
+    id: Optional[StrictStr] = None
+    object: Optional[StrictStr] = None
+    owned_by: Optional[StrictStr] = None
+    __properties = ["created", "id", "object", "owned_by"]
 
     class Config:
         """Pydantic configuration"""
@@ -52,8 +45,8 @@ class DlpZsnerPolicyAnonymizer(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> DlpZsnerPolicyAnonymizer:
-        """Create an instance of DlpZsnerPolicyAnonymizer from a JSON string"""
+    def from_json(cls, json_str: str) -> ListModelsResponseDataInner:
+        """Create an instance of ListModelsResponseDataInner from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -65,16 +58,19 @@ class DlpZsnerPolicyAnonymizer(BaseModel):
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> DlpZsnerPolicyAnonymizer:
-        """Create an instance of DlpZsnerPolicyAnonymizer from a dict"""
+    def from_dict(cls, obj: dict) -> ListModelsResponseDataInner:
+        """Create an instance of ListModelsResponseDataInner from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return DlpZsnerPolicyAnonymizer.parse_obj(obj)
+            return ListModelsResponseDataInner.parse_obj(obj)
 
-        _obj = DlpZsnerPolicyAnonymizer.parse_obj({
-            "type": obj.get("type")
+        _obj = ListModelsResponseDataInner.parse_obj({
+            "created": obj.get("created"),
+            "id": obj.get("id"),
+            "object": obj.get("object"),
+            "owned_by": obj.get("owned_by")
         })
         return _obj
 

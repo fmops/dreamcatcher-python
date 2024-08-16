@@ -15,10 +15,10 @@
 import unittest
 import datetime
 
-from dreamcatcher.models.dlp_zsner_policy_anonymizer import DlpZsnerPolicyAnonymizer  # noqa: E501
+from dreamcatcher.models.list_models_response_data_inner import ListModelsResponseDataInner  # noqa: E501
 
-class TestDlpZsnerPolicyAnonymizer(unittest.TestCase):
-    """DlpZsnerPolicyAnonymizer unit test stubs"""
+class TestListModelsResponseDataInner(unittest.TestCase):
+    """ListModelsResponseDataInner unit test stubs"""
 
     def setUp(self):
         pass
@@ -26,25 +26,28 @@ class TestDlpZsnerPolicyAnonymizer(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def make_instance(self, include_optional) -> DlpZsnerPolicyAnonymizer:
-        """Test DlpZsnerPolicyAnonymizer
+    def make_instance(self, include_optional) -> ListModelsResponseDataInner:
+        """Test ListModelsResponseDataInner
             include_option is a boolean, when False only required
             params are included, when True both required and
             optional params are included """
-        # uncomment below to create an instance of `DlpZsnerPolicyAnonymizer`
+        # uncomment below to create an instance of `ListModelsResponseDataInner`
         """
-        model = DlpZsnerPolicyAnonymizer()  # noqa: E501
+        model = ListModelsResponseDataInner()  # noqa: E501
         if include_optional:
-            return DlpZsnerPolicyAnonymizer(
-                type = 'replace'
+            return ListModelsResponseDataInner(
+                created = 1.337,
+                id = '',
+                object = '',
+                owned_by = ''
             )
         else:
-            return DlpZsnerPolicyAnonymizer(
+            return ListModelsResponseDataInner(
         )
         """
 
-    def testDlpZsnerPolicyAnonymizer(self):
-        """Test DlpZsnerPolicyAnonymizer"""
+    def testListModelsResponseDataInner(self):
+        """Test ListModelsResponseDataInner"""
         # inst_req_only = self.make_instance(include_optional=False)
         # inst_req_and_optional = self.make_instance(include_optional=True)
 

@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **bool** |  | [optional] 
-**anonymizer** | [**DlpZsnerPolicyAnonymizer**](DlpZsnerPolicyAnonymizer.md) |  | [optional] 
-**entities** | **List[str]** |  | [optional] 
+**anonymizer** | [**DlpPolicyAnonymizer**](DlpPolicyAnonymizer.md) |  | [optional] 
+**entities** | [**List[DlpZsnerPolicyEntitiesInner]**](DlpZsnerPolicyEntitiesInner.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 **response** | **str** |  | [optional] 
 **score_threshold** | **float** |  | [optional] 

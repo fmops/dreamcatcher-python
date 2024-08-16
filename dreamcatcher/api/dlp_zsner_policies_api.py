@@ -26,8 +26,8 @@ from typing import Optional
 
 from dreamcatcher.models.dlp_zsner_policy import DlpZsnerPolicy
 from dreamcatcher.models.dlp_zsner_policy_params import DlpZsnerPolicyParams
-from dreamcatcher.models.dreamcatcher_web_zero_shot_ner_policy_controller_scan200_response import DreamcatcherWebZeroShotNERPolicyControllerScan200Response
-from dreamcatcher.models.dreamcatcher_web_zero_shot_ner_policy_controller_scan_request import DreamcatcherWebZeroShotNERPolicyControllerScanRequest
+from dreamcatcher.models.dreamcatcher_web_presidio_policy_controller_scan200_response import DreamcatcherWebPresidioPolicyControllerScan200Response
+from dreamcatcher.models.dreamcatcher_web_presidio_policy_controller_scan_request import DreamcatcherWebPresidioPolicyControllerScanRequest
 
 from dreamcatcher.api_client import ApiClient
 from dreamcatcher.api_response import ApiResponse
@@ -311,7 +311,7 @@ class DlpZsnerPoliciesApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    async def dreamcatcher_web_zero_shot_ner_policy_controller_scan(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], dreamcatcher_web_zero_shot_ner_policy_controller_scan_request : Annotated[Optional[DreamcatcherWebZeroShotNERPolicyControllerScanRequest], Field(description="Content to scan")] = None, **kwargs) -> DreamcatcherWebZeroShotNERPolicyControllerScan200Response:  # noqa: E501
+    async def dreamcatcher_web_zero_shot_ner_policy_controller_scan(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], dreamcatcher_web_presidio_policy_controller_scan_request : Annotated[Optional[DreamcatcherWebPresidioPolicyControllerScanRequest], Field(description="Content to scan")] = None, **kwargs) -> DreamcatcherWebPresidioPolicyControllerScan200Response:  # noqa: E501
         """Scan content with a DLP ZSNER policy  # noqa: E501
 
 
@@ -319,8 +319,8 @@ class DlpZsnerPoliciesApi:
         :type endpoint_name: str
         :param id: DLP ZSNER Policy ID (required)
         :type id: int
-        :param dreamcatcher_web_zero_shot_ner_policy_controller_scan_request: Content to scan
-        :type dreamcatcher_web_zero_shot_ner_policy_controller_scan_request: DreamcatcherWebZeroShotNERPolicyControllerScanRequest
+        :param dreamcatcher_web_presidio_policy_controller_scan_request: Content to scan
+        :type dreamcatcher_web_presidio_policy_controller_scan_request: DreamcatcherWebPresidioPolicyControllerScanRequest
         :param _request_timeout: timeout setting for this request.
                If one number provided, it will be total request
                timeout. It can also be a pair (tuple) of
@@ -328,16 +328,16 @@ class DlpZsnerPoliciesApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: DreamcatcherWebZeroShotNERPolicyControllerScan200Response
+        :rtype: DreamcatcherWebPresidioPolicyControllerScan200Response
         """
         kwargs['_return_http_data_only'] = True
         if '_preload_content' in kwargs:
             message = "Error! Please call the dreamcatcher_web_zero_shot_ner_policy_controller_scan_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
             raise ValueError(message)
-        return await self.dreamcatcher_web_zero_shot_ner_policy_controller_scan_with_http_info(endpoint_name, id, dreamcatcher_web_zero_shot_ner_policy_controller_scan_request, **kwargs)  # noqa: E501
+        return await self.dreamcatcher_web_zero_shot_ner_policy_controller_scan_with_http_info(endpoint_name, id, dreamcatcher_web_presidio_policy_controller_scan_request, **kwargs)  # noqa: E501
 
     @validate_arguments
-    async def dreamcatcher_web_zero_shot_ner_policy_controller_scan_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], dreamcatcher_web_zero_shot_ner_policy_controller_scan_request : Annotated[Optional[DreamcatcherWebZeroShotNERPolicyControllerScanRequest], Field(description="Content to scan")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    async def dreamcatcher_web_zero_shot_ner_policy_controller_scan_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], dreamcatcher_web_presidio_policy_controller_scan_request : Annotated[Optional[DreamcatcherWebPresidioPolicyControllerScanRequest], Field(description="Content to scan")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Scan content with a DLP ZSNER policy  # noqa: E501
 
 
@@ -345,8 +345,8 @@ class DlpZsnerPoliciesApi:
         :type endpoint_name: str
         :param id: DLP ZSNER Policy ID (required)
         :type id: int
-        :param dreamcatcher_web_zero_shot_ner_policy_controller_scan_request: Content to scan
-        :type dreamcatcher_web_zero_shot_ner_policy_controller_scan_request: DreamcatcherWebZeroShotNERPolicyControllerScanRequest
+        :param dreamcatcher_web_presidio_policy_controller_scan_request: Content to scan
+        :type dreamcatcher_web_presidio_policy_controller_scan_request: DreamcatcherWebPresidioPolicyControllerScanRequest
         :param _preload_content: if False, the ApiResponse.data will
                                  be set to none and raw_data will store the
                                  HTTP response body without reading/decoding.
@@ -367,7 +367,7 @@ class DlpZsnerPoliciesApi:
         :return: Returns the result object.
                  If the method is called asynchronously,
                  returns the request thread.
-        :rtype: tuple(DreamcatcherWebZeroShotNERPolicyControllerScan200Response, status_code(int), headers(HTTPHeaderDict))
+        :rtype: tuple(DreamcatcherWebPresidioPolicyControllerScan200Response, status_code(int), headers(HTTPHeaderDict))
         """
 
         _params = locals()
@@ -375,7 +375,7 @@ class DlpZsnerPoliciesApi:
         _all_params = [
             'endpoint_name',
             'id',
-            'dreamcatcher_web_zero_shot_ner_policy_controller_scan_request'
+            'dreamcatcher_web_presidio_policy_controller_scan_request'
         ]
         _all_params.extend(
             [
@@ -418,8 +418,8 @@ class DlpZsnerPoliciesApi:
         _files = {}
         # process the body parameter
         _body_params = None
-        if _params['dreamcatcher_web_zero_shot_ner_policy_controller_scan_request'] is not None:
-            _body_params = _params['dreamcatcher_web_zero_shot_ner_policy_controller_scan_request']
+        if _params['dreamcatcher_web_presidio_policy_controller_scan_request'] is not None:
+            _body_params = _params['dreamcatcher_web_presidio_policy_controller_scan_request']
 
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
@@ -436,152 +436,7 @@ class DlpZsnerPoliciesApi:
         _auth_settings = ['authorization']  # noqa: E501
 
         _response_types_map = {
-            '200': "DreamcatcherWebZeroShotNERPolicyControllerScan200Response",
-        }
-
-        return await self.api_client.call_api(
-            '/api/v1/endpoints/{endpoint_name}/policies/dlp/{id}/scan', 'POST',
-            _path_params,
-            _query_params,
-            _header_params,
-            body=_body_params,
-            post_params=_form_params,
-            files=_files,
-            response_types_map=_response_types_map,
-            auth_settings=_auth_settings,
-            _return_http_data_only=_params.get('_return_http_data_only'),  # noqa: E501
-            _preload_content=_params.get('_preload_content', True),
-            _request_timeout=_params.get('_request_timeout'),
-            collection_formats=_collection_formats,
-            _request_auth=_params.get('_request_auth'))
-
-    @validate_arguments
-    async def dreamcatcher_web_zero_shot_ner_policy_controller_scan__2(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], dreamcatcher_web_zero_shot_ner_policy_controller_scan_request : Annotated[Optional[DreamcatcherWebZeroShotNERPolicyControllerScanRequest], Field(description="Content to scan")] = None, **kwargs) -> DreamcatcherWebZeroShotNERPolicyControllerScan200Response:  # noqa: E501
-        """Scan content with a DLP ZSNER policy  # noqa: E501
-
-
-        :param endpoint_name: Endpoint name (required)
-        :type endpoint_name: str
-        :param id: DLP ZSNER Policy ID (required)
-        :type id: int
-        :param dreamcatcher_web_zero_shot_ner_policy_controller_scan_request: Content to scan
-        :type dreamcatcher_web_zero_shot_ner_policy_controller_scan_request: DreamcatcherWebZeroShotNERPolicyControllerScanRequest
-        :param _request_timeout: timeout setting for this request.
-               If one number provided, it will be total request
-               timeout. It can also be a pair (tuple) of
-               (connection, read) timeouts.
-        :return: Returns the result object.
-                 If the method is called asynchronously,
-                 returns the request thread.
-        :rtype: DreamcatcherWebZeroShotNERPolicyControllerScan200Response
-        """
-        kwargs['_return_http_data_only'] = True
-        if '_preload_content' in kwargs:
-            message = "Error! Please call the dreamcatcher_web_zero_shot_ner_policy_controller_scan__2_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
-            raise ValueError(message)
-        return await self.dreamcatcher_web_zero_shot_ner_policy_controller_scan__2_with_http_info(endpoint_name, id, dreamcatcher_web_zero_shot_ner_policy_controller_scan_request, **kwargs)  # noqa: E501
-
-    @validate_arguments
-    async def dreamcatcher_web_zero_shot_ner_policy_controller_scan__2_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], dreamcatcher_web_zero_shot_ner_policy_controller_scan_request : Annotated[Optional[DreamcatcherWebZeroShotNERPolicyControllerScanRequest], Field(description="Content to scan")] = None, **kwargs) -> ApiResponse:  # noqa: E501
-        """Scan content with a DLP ZSNER policy  # noqa: E501
-
-
-        :param endpoint_name: Endpoint name (required)
-        :type endpoint_name: str
-        :param id: DLP ZSNER Policy ID (required)
-        :type id: int
-        :param dreamcatcher_web_zero_shot_ner_policy_controller_scan_request: Content to scan
-        :type dreamcatcher_web_zero_shot_ner_policy_controller_scan_request: DreamcatcherWebZeroShotNERPolicyControllerScanRequest
-        :param _preload_content: if False, the ApiResponse.data will
-                                 be set to none and raw_data will store the
-                                 HTTP response body without reading/decoding.
-                                 Default is True.
-        :type _preload_content: bool, optional
-        :param _return_http_data_only: response data instead of ApiResponse
-                                       object with status code, headers, etc
-        :type _return_http_data_only: bool, optional
-        :param _request_timeout: timeout setting for this request. If one
-                                 number provided, it will be total request
-                                 timeout. It can also be a pair (tuple) of
-                                 (connection, read) timeouts.
-        :param _request_auth: set to override the auth_settings for an a single
-                              request; this effectively ignores the authentication
-                              in the spec for a single request.
-        :type _request_auth: dict, optional
-        :type _content_type: string, optional: force content-type for the request
-        :return: Returns the result object.
-                 If the method is called asynchronously,
-                 returns the request thread.
-        :rtype: tuple(DreamcatcherWebZeroShotNERPolicyControllerScan200Response, status_code(int), headers(HTTPHeaderDict))
-        """
-
-        _params = locals()
-
-        _all_params = [
-            'endpoint_name',
-            'id',
-            'dreamcatcher_web_zero_shot_ner_policy_controller_scan_request'
-        ]
-        _all_params.extend(
-            [
-                '_return_http_data_only',
-                '_preload_content',
-                '_request_timeout',
-                '_request_auth',
-                '_content_type',
-                '_headers'
-            ]
-        )
-
-        # validate the arguments
-        for _key, _val in _params['kwargs'].items():
-            if _key not in _all_params:
-                raise ApiTypeError(
-                    "Got an unexpected keyword argument '%s'"
-                    " to method dreamcatcher_web_zero_shot_ner_policy_controller_scan__2" % _key
-                )
-            _params[_key] = _val
-        del _params['kwargs']
-
-        _collection_formats = {}
-
-        # process the path parameters
-        _path_params = {}
-        if _params['endpoint_name'] is not None:
-            _path_params['endpoint_name'] = _params['endpoint_name']
-
-        if _params['id'] is not None:
-            _path_params['id'] = _params['id']
-
-
-        # process the query parameters
-        _query_params = []
-        # process the header parameters
-        _header_params = dict(_params.get('_headers', {}))
-        # process the form parameters
-        _form_params = []
-        _files = {}
-        # process the body parameter
-        _body_params = None
-        if _params['dreamcatcher_web_zero_shot_ner_policy_controller_scan_request'] is not None:
-            _body_params = _params['dreamcatcher_web_zero_shot_ner_policy_controller_scan_request']
-
-        # set the HTTP header `Accept`
-        _header_params['Accept'] = self.api_client.select_header_accept(
-            ['application/json'])  # noqa: E501
-
-        # set the HTTP header `Content-Type`
-        _content_types_list = _params.get('_content_type',
-            self.api_client.select_header_content_type(
-                ['application/json']))
-        if _content_types_list:
-                _header_params['Content-Type'] = _content_types_list
-
-        # authentication setting
-        _auth_settings = ['authorization']  # noqa: E501
-
-        _response_types_map = {
-            '200': "DreamcatcherWebZeroShotNERPolicyControllerScan200Response",
+            '200': "DreamcatcherWebPresidioPolicyControllerScan200Response",
         }
 
         return await self.api_client.call_api(
@@ -860,7 +715,7 @@ class DlpZsnerPoliciesApi:
         }
 
         return await self.api_client.call_api(
-            '/api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id}', 'PATCH',
+            '/api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id}', 'PUT',
             _path_params,
             _query_params,
             _header_params,
@@ -1005,7 +860,7 @@ class DlpZsnerPoliciesApi:
         }
 
         return await self.api_client.call_api(
-            '/api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id}', 'PUT',
+            '/api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id}', 'PATCH',
             _path_params,
             _query_params,
             _header_params,

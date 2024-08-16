@@ -19,15 +19,14 @@ import json
 
 
 from typing import Optional
-from pydantic import BaseModel
-from dreamcatcher.models.dlp_zsner_policy import DlpZsnerPolicy
+from pydantic import BaseModel, StrictStr
 
-class DlpZsnerPolicyParams(BaseModel):
+class DreamcatcherWebPresidioPolicyControllerScanRequest(BaseModel):
     """
-    DlpZsnerPolicyParams
+    DreamcatcherWebPresidioPolicyControllerScanRequest
     """
-    dlp_zsner_policy: Optional[DlpZsnerPolicy] = None
-    __properties = ["dlp_zsner_policy"]
+    content: Optional[StrictStr] = None
+    __properties = ["content"]
 
     class Config:
         """Pydantic configuration"""
@@ -43,8 +42,8 @@ class DlpZsnerPolicyParams(BaseModel):
         return json.dumps(self.to_dict())
 
     @classmethod
-    def from_json(cls, json_str: str) -> DlpZsnerPolicyParams:
-        """Create an instance of DlpZsnerPolicyParams from a JSON string"""
+    def from_json(cls, json_str: str) -> DreamcatcherWebPresidioPolicyControllerScanRequest:
+        """Create an instance of DreamcatcherWebPresidioPolicyControllerScanRequest from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self):
@@ -53,22 +52,19 @@ class DlpZsnerPolicyParams(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of dlp_zsner_policy
-        if self.dlp_zsner_policy:
-            _dict['dlp_zsner_policy'] = self.dlp_zsner_policy.to_dict()
         return _dict
 
     @classmethod
-    def from_dict(cls, obj: dict) -> DlpZsnerPolicyParams:
-        """Create an instance of DlpZsnerPolicyParams from a dict"""
+    def from_dict(cls, obj: dict) -> DreamcatcherWebPresidioPolicyControllerScanRequest:
+        """Create an instance of DreamcatcherWebPresidioPolicyControllerScanRequest from a dict"""
         if obj is None:
             return None
 
         if not isinstance(obj, dict):
-            return DlpZsnerPolicyParams.parse_obj(obj)
+            return DreamcatcherWebPresidioPolicyControllerScanRequest.parse_obj(obj)
 
-        _obj = DlpZsnerPolicyParams.parse_obj({
-            "dlp_zsner_policy": DlpZsnerPolicy.from_dict(obj.get("dlp_zsner_policy")) if obj.get("dlp_zsner_policy") is not None else None
+        _obj = DreamcatcherWebPresidioPolicyControllerScanRequest.parse_obj({
+            "content": obj.get("content")
         })
         return _obj
 
