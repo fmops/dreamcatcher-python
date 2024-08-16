@@ -34,14 +34,14 @@ configuration = dreamcatcher.Configuration(
 
 
 # Enter a context with an instance of the API client
-async with dreamcatcher.ApiClient(configuration) as api_client:
+with dreamcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dreamcatcher.StubOpenaiApi(api_client)
     create_chat_completion = dreamcatcher.CreateChatCompletion() # CreateChatCompletion | Chat completion params (optional)
 
     try:
         # Chat completion
-        api_response = await api_instance.stubidity_open_ai_chat_completion_call(create_chat_completion=create_chat_completion)
+        api_response = api_instance.stubidity_open_ai_chat_completion_call(create_chat_completion=create_chat_completion)
         print("The response of StubOpenaiApi->stubidity_open_ai_chat_completion_call:\n")
         pprint(api_response)
     except Exception as e:
@@ -100,14 +100,14 @@ configuration = dreamcatcher.Configuration(
 
 
 # Enter a context with an instance of the API client
-async with dreamcatcher.ApiClient(configuration) as api_client:
+with dreamcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dreamcatcher.StubOpenaiApi(api_client)
     completion = dreamcatcher.Completion() # Completion | Completion params (optional)
 
     try:
         # Completion
-        api_response = await api_instance.stubidity_open_ai_completion_call(completion=completion)
+        api_response = api_instance.stubidity_open_ai_completion_call(completion=completion)
         print("The response of StubOpenaiApi->stubidity_open_ai_completion_call:\n")
         pprint(api_response)
     except Exception as e:
@@ -166,14 +166,14 @@ configuration = dreamcatcher.Configuration(
 
 
 # Enter a context with an instance of the API client
-async with dreamcatcher.ApiClient(configuration) as api_client:
+with dreamcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dreamcatcher.StubOpenaiApi(api_client)
     embedding = dreamcatcher.Embedding() # Embedding | Embedding params (optional)
 
     try:
         # Embedding
-        api_response = await api_instance.stubidity_open_ai_embedding_call(embedding=embedding)
+        api_response = api_instance.stubidity_open_ai_embedding_call(embedding=embedding)
         print("The response of StubOpenaiApi->stubidity_open_ai_embedding_call:\n")
         pprint(api_response)
     except Exception as e:
@@ -232,14 +232,14 @@ configuration = dreamcatcher.Configuration(
 
 
 # Enter a context with an instance of the API client
-async with dreamcatcher.ApiClient(configuration) as api_client:
+with dreamcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dreamcatcher.StubOpenaiApi(api_client)
     embedding = dreamcatcher.Embedding() # Embedding | Embedding params (optional)
 
     try:
         # Embedding
-        api_response = await api_instance.stubidity_open_ai_embedding_call__2(embedding=embedding)
+        api_response = api_instance.stubidity_open_ai_embedding_call__2(embedding=embedding)
         print("The response of StubOpenaiApi->stubidity_open_ai_embedding_call__2:\n")
         pprint(api_response)
     except Exception as e:

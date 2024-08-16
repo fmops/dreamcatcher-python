@@ -44,13 +44,13 @@ configuration = dreamcatcher.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with dreamcatcher.ApiClient(configuration) as api_client:
+with dreamcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dreamcatcher.EndpointsApi(api_client)
 
     try:
         # List endpoints
-        api_response = await api_instance.dreamcatcher_web_endpoint_controller_index()
+        api_response = api_instance.dreamcatcher_web_endpoint_controller_index()
         print("The response of EndpointsApi->dreamcatcher_web_endpoint_controller_index:\n")
         pprint(api_response)
     except Exception as e:
@@ -116,7 +116,7 @@ configuration = dreamcatcher.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with dreamcatcher.ApiClient(configuration) as api_client:
+with dreamcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dreamcatcher.EndpointsApi(api_client)
     endpoint_name = 'demo-endpoint' # str | Endpoint name
@@ -124,7 +124,7 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 
     try:
         # Invoke a chat completion
-        api_response = await api_instance.dreamcatcher_web_endpoint_controller_invoke_chat_completions(endpoint_name, create_chat_completion=create_chat_completion)
+        api_response = api_instance.dreamcatcher_web_endpoint_controller_invoke_chat_completions(endpoint_name, create_chat_completion=create_chat_completion)
         print("The response of EndpointsApi->dreamcatcher_web_endpoint_controller_invoke_chat_completions:\n")
         pprint(api_response)
     except Exception as e:
@@ -194,7 +194,7 @@ configuration = dreamcatcher.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with dreamcatcher.ApiClient(configuration) as api_client:
+with dreamcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dreamcatcher.EndpointsApi(api_client)
     endpoint_name = 'demo-endpoint' # str | Endpoint name
@@ -202,7 +202,7 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 
     try:
         # Invoke a completion
-        api_response = await api_instance.dreamcatcher_web_endpoint_controller_invoke_completions(endpoint_name, completion=completion)
+        api_response = api_instance.dreamcatcher_web_endpoint_controller_invoke_completions(endpoint_name, completion=completion)
         print("The response of EndpointsApi->dreamcatcher_web_endpoint_controller_invoke_completions:\n")
         pprint(api_response)
     except Exception as e:
@@ -271,14 +271,14 @@ configuration = dreamcatcher.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with dreamcatcher.ApiClient(configuration) as api_client:
+with dreamcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dreamcatcher.EndpointsApi(api_client)
     endpoint_name = 'demo-endpoint' # str | Endpoint name
 
     try:
         # Lists upstreams (ie models) for an endpoint
-        api_response = await api_instance.dreamcatcher_web_endpoint_controller_models(endpoint_name)
+        api_response = api_instance.dreamcatcher_web_endpoint_controller_models(endpoint_name)
         print("The response of EndpointsApi->dreamcatcher_web_endpoint_controller_models:\n")
         pprint(api_response)
     except Exception as e:
@@ -346,14 +346,14 @@ configuration = dreamcatcher.Configuration(
 )
 
 # Enter a context with an instance of the API client
-async with dreamcatcher.ApiClient(configuration) as api_client:
+with dreamcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dreamcatcher.EndpointsApi(api_client)
     id = 'demo-endpoint' # str | Endpoint name
 
     try:
         # Get an endpoint
-        api_response = await api_instance.dreamcatcher_web_endpoint_controller_show(id)
+        api_response = api_instance.dreamcatcher_web_endpoint_controller_show(id)
         print("The response of EndpointsApi->dreamcatcher_web_endpoint_controller_show:\n")
         pprint(api_response)
     except Exception as e:

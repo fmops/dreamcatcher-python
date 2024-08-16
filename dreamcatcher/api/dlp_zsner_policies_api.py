@@ -17,7 +17,6 @@ import io
 import warnings
 
 from pydantic import validate_arguments, ValidationError
-from typing import overload, Optional, Union, Awaitable
 
 from typing_extensions import Annotated
 from pydantic import Field, StrictInt, StrictStr
@@ -50,14 +49,21 @@ class DlpZsnerPoliciesApi:
         self.api_client = api_client
 
     @validate_arguments
-    async def dreamcatcher_web_zero_shot_ner_policy_controller_create(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], dlp_zsner_policy_params : Annotated[Optional[DlpZsnerPolicyParams], Field(description="DLP ZSNER policy params")] = None, **kwargs) -> DlpZsnerPolicy:  # noqa: E501
+    def dreamcatcher_web_zero_shot_ner_policy_controller_create(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], dlp_zsner_policy_params : Annotated[Optional[DlpZsnerPolicyParams], Field(description="DLP ZSNER policy params")] = None, **kwargs) -> DlpZsnerPolicy:  # noqa: E501
         """Create a DLP ZSNER policy  # noqa: E501
 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.dreamcatcher_web_zero_shot_ner_policy_controller_create(endpoint_name, dlp_zsner_policy_params, async_req=True)
+        >>> result = thread.get()
 
         :param endpoint_name: Endpoint name (required)
         :type endpoint_name: str
         :param dlp_zsner_policy_params: DLP ZSNER policy params
         :type dlp_zsner_policy_params: DlpZsnerPolicyParams
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request.
                If one number provided, it will be total request
                timeout. It can also be a pair (tuple) of
@@ -71,17 +77,24 @@ class DlpZsnerPoliciesApi:
         if '_preload_content' in kwargs:
             message = "Error! Please call the dreamcatcher_web_zero_shot_ner_policy_controller_create_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
             raise ValueError(message)
-        return await self.dreamcatcher_web_zero_shot_ner_policy_controller_create_with_http_info(endpoint_name, dlp_zsner_policy_params, **kwargs)  # noqa: E501
+        return self.dreamcatcher_web_zero_shot_ner_policy_controller_create_with_http_info(endpoint_name, dlp_zsner_policy_params, **kwargs)  # noqa: E501
 
     @validate_arguments
-    async def dreamcatcher_web_zero_shot_ner_policy_controller_create_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], dlp_zsner_policy_params : Annotated[Optional[DlpZsnerPolicyParams], Field(description="DLP ZSNER policy params")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def dreamcatcher_web_zero_shot_ner_policy_controller_create_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], dlp_zsner_policy_params : Annotated[Optional[DlpZsnerPolicyParams], Field(description="DLP ZSNER policy params")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Create a DLP ZSNER policy  # noqa: E501
 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.dreamcatcher_web_zero_shot_ner_policy_controller_create_with_http_info(endpoint_name, dlp_zsner_policy_params, async_req=True)
+        >>> result = thread.get()
 
         :param endpoint_name: Endpoint name (required)
         :type endpoint_name: str
         :param dlp_zsner_policy_params: DLP ZSNER policy params
         :type dlp_zsner_policy_params: DlpZsnerPolicyParams
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                                  be set to none and raw_data will store the
                                  HTTP response body without reading/decoding.
@@ -113,6 +126,7 @@ class DlpZsnerPoliciesApi:
         ]
         _all_params.extend(
             [
+                'async_req',
                 '_return_http_data_only',
                 '_preload_content',
                 '_request_timeout',
@@ -170,7 +184,7 @@ class DlpZsnerPoliciesApi:
             '200': "DlpZsnerPolicy",
         }
 
-        return await self.api_client.call_api(
+        return self.api_client.call_api(
             '/api/v1/endpoints/{endpoint_name}/policies/dlp_zsner', 'POST',
             _path_params,
             _query_params,
@@ -180,6 +194,7 @@ class DlpZsnerPoliciesApi:
             files=_files,
             response_types_map=_response_types_map,
             auth_settings=_auth_settings,
+            async_req=_params.get('async_req'),
             _return_http_data_only=_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=_params.get('_preload_content', True),
             _request_timeout=_params.get('_request_timeout'),
@@ -187,14 +202,21 @@ class DlpZsnerPoliciesApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    async def dreamcatcher_web_zero_shot_ner_policy_controller_delete(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], **kwargs) -> None:  # noqa: E501
+    def dreamcatcher_web_zero_shot_ner_policy_controller_delete(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], **kwargs) -> None:  # noqa: E501
         """Delete a DLP ZSNER policy  # noqa: E501
 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.dreamcatcher_web_zero_shot_ner_policy_controller_delete(endpoint_name, id, async_req=True)
+        >>> result = thread.get()
 
         :param endpoint_name: Endpoint name (required)
         :type endpoint_name: str
         :param id: DLP ZSNER Policy ID (required)
         :type id: int
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request.
                If one number provided, it will be total request
                timeout. It can also be a pair (tuple) of
@@ -208,17 +230,24 @@ class DlpZsnerPoliciesApi:
         if '_preload_content' in kwargs:
             message = "Error! Please call the dreamcatcher_web_zero_shot_ner_policy_controller_delete_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
             raise ValueError(message)
-        return await self.dreamcatcher_web_zero_shot_ner_policy_controller_delete_with_http_info(endpoint_name, id, **kwargs)  # noqa: E501
+        return self.dreamcatcher_web_zero_shot_ner_policy_controller_delete_with_http_info(endpoint_name, id, **kwargs)  # noqa: E501
 
     @validate_arguments
-    async def dreamcatcher_web_zero_shot_ner_policy_controller_delete_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], **kwargs) -> ApiResponse:  # noqa: E501
+    def dreamcatcher_web_zero_shot_ner_policy_controller_delete_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], **kwargs) -> ApiResponse:  # noqa: E501
         """Delete a DLP ZSNER policy  # noqa: E501
 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.dreamcatcher_web_zero_shot_ner_policy_controller_delete_with_http_info(endpoint_name, id, async_req=True)
+        >>> result = thread.get()
 
         :param endpoint_name: Endpoint name (required)
         :type endpoint_name: str
         :param id: DLP ZSNER Policy ID (required)
         :type id: int
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                                  be set to none and raw_data will store the
                                  HTTP response body without reading/decoding.
@@ -250,6 +279,7 @@ class DlpZsnerPoliciesApi:
         ]
         _all_params.extend(
             [
+                'async_req',
                 '_return_http_data_only',
                 '_preload_content',
                 '_request_timeout',
@@ -294,7 +324,7 @@ class DlpZsnerPoliciesApi:
 
         _response_types_map = {}
 
-        return await self.api_client.call_api(
+        return self.api_client.call_api(
             '/api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id}', 'DELETE',
             _path_params,
             _query_params,
@@ -304,6 +334,7 @@ class DlpZsnerPoliciesApi:
             files=_files,
             response_types_map=_response_types_map,
             auth_settings=_auth_settings,
+            async_req=_params.get('async_req'),
             _return_http_data_only=_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=_params.get('_preload_content', True),
             _request_timeout=_params.get('_request_timeout'),
@@ -311,9 +342,14 @@ class DlpZsnerPoliciesApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    async def dreamcatcher_web_zero_shot_ner_policy_controller_scan(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], dreamcatcher_web_presidio_policy_controller_scan_request : Annotated[Optional[DreamcatcherWebPresidioPolicyControllerScanRequest], Field(description="Content to scan")] = None, **kwargs) -> DreamcatcherWebPresidioPolicyControllerScan200Response:  # noqa: E501
+    def dreamcatcher_web_zero_shot_ner_policy_controller_scan(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], dreamcatcher_web_presidio_policy_controller_scan_request : Annotated[Optional[DreamcatcherWebPresidioPolicyControllerScanRequest], Field(description="Content to scan")] = None, **kwargs) -> DreamcatcherWebPresidioPolicyControllerScan200Response:  # noqa: E501
         """Scan content with a DLP ZSNER policy  # noqa: E501
 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.dreamcatcher_web_zero_shot_ner_policy_controller_scan(endpoint_name, id, dreamcatcher_web_presidio_policy_controller_scan_request, async_req=True)
+        >>> result = thread.get()
 
         :param endpoint_name: Endpoint name (required)
         :type endpoint_name: str
@@ -321,6 +357,8 @@ class DlpZsnerPoliciesApi:
         :type id: int
         :param dreamcatcher_web_presidio_policy_controller_scan_request: Content to scan
         :type dreamcatcher_web_presidio_policy_controller_scan_request: DreamcatcherWebPresidioPolicyControllerScanRequest
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request.
                If one number provided, it will be total request
                timeout. It can also be a pair (tuple) of
@@ -334,12 +372,17 @@ class DlpZsnerPoliciesApi:
         if '_preload_content' in kwargs:
             message = "Error! Please call the dreamcatcher_web_zero_shot_ner_policy_controller_scan_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
             raise ValueError(message)
-        return await self.dreamcatcher_web_zero_shot_ner_policy_controller_scan_with_http_info(endpoint_name, id, dreamcatcher_web_presidio_policy_controller_scan_request, **kwargs)  # noqa: E501
+        return self.dreamcatcher_web_zero_shot_ner_policy_controller_scan_with_http_info(endpoint_name, id, dreamcatcher_web_presidio_policy_controller_scan_request, **kwargs)  # noqa: E501
 
     @validate_arguments
-    async def dreamcatcher_web_zero_shot_ner_policy_controller_scan_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], dreamcatcher_web_presidio_policy_controller_scan_request : Annotated[Optional[DreamcatcherWebPresidioPolicyControllerScanRequest], Field(description="Content to scan")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def dreamcatcher_web_zero_shot_ner_policy_controller_scan_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], dreamcatcher_web_presidio_policy_controller_scan_request : Annotated[Optional[DreamcatcherWebPresidioPolicyControllerScanRequest], Field(description="Content to scan")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Scan content with a DLP ZSNER policy  # noqa: E501
 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.dreamcatcher_web_zero_shot_ner_policy_controller_scan_with_http_info(endpoint_name, id, dreamcatcher_web_presidio_policy_controller_scan_request, async_req=True)
+        >>> result = thread.get()
 
         :param endpoint_name: Endpoint name (required)
         :type endpoint_name: str
@@ -347,6 +390,8 @@ class DlpZsnerPoliciesApi:
         :type id: int
         :param dreamcatcher_web_presidio_policy_controller_scan_request: Content to scan
         :type dreamcatcher_web_presidio_policy_controller_scan_request: DreamcatcherWebPresidioPolicyControllerScanRequest
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                                  be set to none and raw_data will store the
                                  HTTP response body without reading/decoding.
@@ -379,6 +424,7 @@ class DlpZsnerPoliciesApi:
         ]
         _all_params.extend(
             [
+                'async_req',
                 '_return_http_data_only',
                 '_preload_content',
                 '_request_timeout',
@@ -439,7 +485,7 @@ class DlpZsnerPoliciesApi:
             '200': "DreamcatcherWebPresidioPolicyControllerScan200Response",
         }
 
-        return await self.api_client.call_api(
+        return self.api_client.call_api(
             '/api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id}/scan', 'POST',
             _path_params,
             _query_params,
@@ -449,6 +495,7 @@ class DlpZsnerPoliciesApi:
             files=_files,
             response_types_map=_response_types_map,
             auth_settings=_auth_settings,
+            async_req=_params.get('async_req'),
             _return_http_data_only=_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=_params.get('_preload_content', True),
             _request_timeout=_params.get('_request_timeout'),
@@ -456,14 +503,21 @@ class DlpZsnerPoliciesApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    async def dreamcatcher_web_zero_shot_ner_policy_controller_show(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], **kwargs) -> DlpZsnerPolicy:  # noqa: E501
+    def dreamcatcher_web_zero_shot_ner_policy_controller_show(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], **kwargs) -> DlpZsnerPolicy:  # noqa: E501
         """Get a DLP ZSNER policy  # noqa: E501
 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.dreamcatcher_web_zero_shot_ner_policy_controller_show(endpoint_name, id, async_req=True)
+        >>> result = thread.get()
 
         :param endpoint_name: Endpoint name (required)
         :type endpoint_name: str
         :param id: DLP ZSNER Policy ID (required)
         :type id: int
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request.
                If one number provided, it will be total request
                timeout. It can also be a pair (tuple) of
@@ -477,17 +531,24 @@ class DlpZsnerPoliciesApi:
         if '_preload_content' in kwargs:
             message = "Error! Please call the dreamcatcher_web_zero_shot_ner_policy_controller_show_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
             raise ValueError(message)
-        return await self.dreamcatcher_web_zero_shot_ner_policy_controller_show_with_http_info(endpoint_name, id, **kwargs)  # noqa: E501
+        return self.dreamcatcher_web_zero_shot_ner_policy_controller_show_with_http_info(endpoint_name, id, **kwargs)  # noqa: E501
 
     @validate_arguments
-    async def dreamcatcher_web_zero_shot_ner_policy_controller_show_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], **kwargs) -> ApiResponse:  # noqa: E501
+    def dreamcatcher_web_zero_shot_ner_policy_controller_show_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], **kwargs) -> ApiResponse:  # noqa: E501
         """Get a DLP ZSNER policy  # noqa: E501
 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.dreamcatcher_web_zero_shot_ner_policy_controller_show_with_http_info(endpoint_name, id, async_req=True)
+        >>> result = thread.get()
 
         :param endpoint_name: Endpoint name (required)
         :type endpoint_name: str
         :param id: DLP ZSNER Policy ID (required)
         :type id: int
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                                  be set to none and raw_data will store the
                                  HTTP response body without reading/decoding.
@@ -519,6 +580,7 @@ class DlpZsnerPoliciesApi:
         ]
         _all_params.extend(
             [
+                'async_req',
                 '_return_http_data_only',
                 '_preload_content',
                 '_request_timeout',
@@ -569,7 +631,7 @@ class DlpZsnerPoliciesApi:
             '200': "DlpZsnerPolicy",
         }
 
-        return await self.api_client.call_api(
+        return self.api_client.call_api(
             '/api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id}', 'GET',
             _path_params,
             _query_params,
@@ -579,6 +641,7 @@ class DlpZsnerPoliciesApi:
             files=_files,
             response_types_map=_response_types_map,
             auth_settings=_auth_settings,
+            async_req=_params.get('async_req'),
             _return_http_data_only=_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=_params.get('_preload_content', True),
             _request_timeout=_params.get('_request_timeout'),
@@ -586,9 +649,14 @@ class DlpZsnerPoliciesApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    async def dreamcatcher_web_zero_shot_ner_policy_controller_update(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], dlp_zsner_policy_params : Annotated[Optional[DlpZsnerPolicyParams], Field(description="DLP ZSNER policy params")] = None, **kwargs) -> DlpZsnerPolicy:  # noqa: E501
+    def dreamcatcher_web_zero_shot_ner_policy_controller_update(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], dlp_zsner_policy_params : Annotated[Optional[DlpZsnerPolicyParams], Field(description="DLP ZSNER policy params")] = None, **kwargs) -> DlpZsnerPolicy:  # noqa: E501
         """Update a DLP ZSNER policy  # noqa: E501
 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.dreamcatcher_web_zero_shot_ner_policy_controller_update(endpoint_name, id, dlp_zsner_policy_params, async_req=True)
+        >>> result = thread.get()
 
         :param endpoint_name: Endpoint name (required)
         :type endpoint_name: str
@@ -596,6 +664,8 @@ class DlpZsnerPoliciesApi:
         :type id: int
         :param dlp_zsner_policy_params: DLP ZSNER policy params
         :type dlp_zsner_policy_params: DlpZsnerPolicyParams
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request.
                If one number provided, it will be total request
                timeout. It can also be a pair (tuple) of
@@ -609,12 +679,17 @@ class DlpZsnerPoliciesApi:
         if '_preload_content' in kwargs:
             message = "Error! Please call the dreamcatcher_web_zero_shot_ner_policy_controller_update_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
             raise ValueError(message)
-        return await self.dreamcatcher_web_zero_shot_ner_policy_controller_update_with_http_info(endpoint_name, id, dlp_zsner_policy_params, **kwargs)  # noqa: E501
+        return self.dreamcatcher_web_zero_shot_ner_policy_controller_update_with_http_info(endpoint_name, id, dlp_zsner_policy_params, **kwargs)  # noqa: E501
 
     @validate_arguments
-    async def dreamcatcher_web_zero_shot_ner_policy_controller_update_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], dlp_zsner_policy_params : Annotated[Optional[DlpZsnerPolicyParams], Field(description="DLP ZSNER policy params")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def dreamcatcher_web_zero_shot_ner_policy_controller_update_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], dlp_zsner_policy_params : Annotated[Optional[DlpZsnerPolicyParams], Field(description="DLP ZSNER policy params")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Update a DLP ZSNER policy  # noqa: E501
 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.dreamcatcher_web_zero_shot_ner_policy_controller_update_with_http_info(endpoint_name, id, dlp_zsner_policy_params, async_req=True)
+        >>> result = thread.get()
 
         :param endpoint_name: Endpoint name (required)
         :type endpoint_name: str
@@ -622,6 +697,8 @@ class DlpZsnerPoliciesApi:
         :type id: int
         :param dlp_zsner_policy_params: DLP ZSNER policy params
         :type dlp_zsner_policy_params: DlpZsnerPolicyParams
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                                  be set to none and raw_data will store the
                                  HTTP response body without reading/decoding.
@@ -654,6 +731,7 @@ class DlpZsnerPoliciesApi:
         ]
         _all_params.extend(
             [
+                'async_req',
                 '_return_http_data_only',
                 '_preload_content',
                 '_request_timeout',
@@ -714,7 +792,7 @@ class DlpZsnerPoliciesApi:
             '200': "DlpZsnerPolicy",
         }
 
-        return await self.api_client.call_api(
+        return self.api_client.call_api(
             '/api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id}', 'PATCH',
             _path_params,
             _query_params,
@@ -724,6 +802,7 @@ class DlpZsnerPoliciesApi:
             files=_files,
             response_types_map=_response_types_map,
             auth_settings=_auth_settings,
+            async_req=_params.get('async_req'),
             _return_http_data_only=_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=_params.get('_preload_content', True),
             _request_timeout=_params.get('_request_timeout'),
@@ -731,9 +810,14 @@ class DlpZsnerPoliciesApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    async def dreamcatcher_web_zero_shot_ner_policy_controller_update__2(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], dlp_zsner_policy_params : Annotated[Optional[DlpZsnerPolicyParams], Field(description="DLP ZSNER policy params")] = None, **kwargs) -> DlpZsnerPolicy:  # noqa: E501
+    def dreamcatcher_web_zero_shot_ner_policy_controller_update__2(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], dlp_zsner_policy_params : Annotated[Optional[DlpZsnerPolicyParams], Field(description="DLP ZSNER policy params")] = None, **kwargs) -> DlpZsnerPolicy:  # noqa: E501
         """Update a DLP ZSNER policy  # noqa: E501
 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.dreamcatcher_web_zero_shot_ner_policy_controller_update__2(endpoint_name, id, dlp_zsner_policy_params, async_req=True)
+        >>> result = thread.get()
 
         :param endpoint_name: Endpoint name (required)
         :type endpoint_name: str
@@ -741,6 +825,8 @@ class DlpZsnerPoliciesApi:
         :type id: int
         :param dlp_zsner_policy_params: DLP ZSNER policy params
         :type dlp_zsner_policy_params: DlpZsnerPolicyParams
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request.
                If one number provided, it will be total request
                timeout. It can also be a pair (tuple) of
@@ -754,12 +840,17 @@ class DlpZsnerPoliciesApi:
         if '_preload_content' in kwargs:
             message = "Error! Please call the dreamcatcher_web_zero_shot_ner_policy_controller_update__2_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
             raise ValueError(message)
-        return await self.dreamcatcher_web_zero_shot_ner_policy_controller_update__2_with_http_info(endpoint_name, id, dlp_zsner_policy_params, **kwargs)  # noqa: E501
+        return self.dreamcatcher_web_zero_shot_ner_policy_controller_update__2_with_http_info(endpoint_name, id, dlp_zsner_policy_params, **kwargs)  # noqa: E501
 
     @validate_arguments
-    async def dreamcatcher_web_zero_shot_ner_policy_controller_update__2_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], dlp_zsner_policy_params : Annotated[Optional[DlpZsnerPolicyParams], Field(description="DLP ZSNER policy params")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def dreamcatcher_web_zero_shot_ner_policy_controller_update__2_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], id : Annotated[StrictInt, Field(..., description="DLP ZSNER Policy ID")], dlp_zsner_policy_params : Annotated[Optional[DlpZsnerPolicyParams], Field(description="DLP ZSNER policy params")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Update a DLP ZSNER policy  # noqa: E501
 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.dreamcatcher_web_zero_shot_ner_policy_controller_update__2_with_http_info(endpoint_name, id, dlp_zsner_policy_params, async_req=True)
+        >>> result = thread.get()
 
         :param endpoint_name: Endpoint name (required)
         :type endpoint_name: str
@@ -767,6 +858,8 @@ class DlpZsnerPoliciesApi:
         :type id: int
         :param dlp_zsner_policy_params: DLP ZSNER policy params
         :type dlp_zsner_policy_params: DlpZsnerPolicyParams
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                                  be set to none and raw_data will store the
                                  HTTP response body without reading/decoding.
@@ -799,6 +892,7 @@ class DlpZsnerPoliciesApi:
         ]
         _all_params.extend(
             [
+                'async_req',
                 '_return_http_data_only',
                 '_preload_content',
                 '_request_timeout',
@@ -859,7 +953,7 @@ class DlpZsnerPoliciesApi:
             '200': "DlpZsnerPolicy",
         }
 
-        return await self.api_client.call_api(
+        return self.api_client.call_api(
             '/api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id}', 'PUT',
             _path_params,
             _query_params,
@@ -869,6 +963,7 @@ class DlpZsnerPoliciesApi:
             files=_files,
             response_types_map=_response_types_map,
             auth_settings=_auth_settings,
+            async_req=_params.get('async_req'),
             _return_http_data_only=_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=_params.get('_preload_content', True),
             _request_timeout=_params.get('_request_timeout'),

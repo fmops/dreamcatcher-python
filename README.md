@@ -74,7 +74,7 @@ configuration = dreamcatcher.Configuration(
 
 
 # Enter a context with an instance of the API client
-async with dreamcatcher.ApiClient(configuration) as api_client:
+with dreamcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dreamcatcher.DlpPoliciesApi(api_client)
     endpoint_name = 'demo-endpoint' # str | Endpoint name
@@ -82,7 +82,7 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 
     try:
         # Create a DLP policy
-        api_response = await api_instance.dreamcatcher_web_presidio_policy_controller_create(endpoint_name, dlp_policy_params=dlp_policy_params)
+        api_response = api_instance.dreamcatcher_web_presidio_policy_controller_create(endpoint_name, dlp_policy_params=dlp_policy_params)
         print("The response of DlpPoliciesApi->dreamcatcher_web_presidio_policy_controller_create:\n")
         pprint(api_response)
     except ApiException as e:

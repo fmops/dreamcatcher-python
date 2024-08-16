@@ -17,7 +17,6 @@ import io
 import warnings
 
 from pydantic import validate_arguments, ValidationError
-from typing import overload, Optional, Union, Awaitable
 
 from typing_extensions import Annotated
 from pydantic import Field
@@ -52,12 +51,19 @@ class StubOpenaiApi:
         self.api_client = api_client
 
     @validate_arguments
-    async def stubidity_open_ai_chat_completion_call(self, create_chat_completion : Annotated[Optional[CreateChatCompletion], Field(description="Chat completion params")] = None, **kwargs) -> ChatCompletionResponse:  # noqa: E501
+    def stubidity_open_ai_chat_completion_call(self, create_chat_completion : Annotated[Optional[CreateChatCompletion], Field(description="Chat completion params")] = None, **kwargs) -> ChatCompletionResponse:  # noqa: E501
         """Chat completion  # noqa: E501
 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.stubidity_open_ai_chat_completion_call(create_chat_completion, async_req=True)
+        >>> result = thread.get()
 
         :param create_chat_completion: Chat completion params
         :type create_chat_completion: CreateChatCompletion
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request.
                If one number provided, it will be total request
                timeout. It can also be a pair (tuple) of
@@ -71,15 +77,22 @@ class StubOpenaiApi:
         if '_preload_content' in kwargs:
             message = "Error! Please call the stubidity_open_ai_chat_completion_call_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
             raise ValueError(message)
-        return await self.stubidity_open_ai_chat_completion_call_with_http_info(create_chat_completion, **kwargs)  # noqa: E501
+        return self.stubidity_open_ai_chat_completion_call_with_http_info(create_chat_completion, **kwargs)  # noqa: E501
 
     @validate_arguments
-    async def stubidity_open_ai_chat_completion_call_with_http_info(self, create_chat_completion : Annotated[Optional[CreateChatCompletion], Field(description="Chat completion params")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def stubidity_open_ai_chat_completion_call_with_http_info(self, create_chat_completion : Annotated[Optional[CreateChatCompletion], Field(description="Chat completion params")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Chat completion  # noqa: E501
 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.stubidity_open_ai_chat_completion_call_with_http_info(create_chat_completion, async_req=True)
+        >>> result = thread.get()
 
         :param create_chat_completion: Chat completion params
         :type create_chat_completion: CreateChatCompletion
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                                  be set to none and raw_data will store the
                                  HTTP response body without reading/decoding.
@@ -110,6 +123,7 @@ class StubOpenaiApi:
         ]
         _all_params.extend(
             [
+                'async_req',
                 '_return_http_data_only',
                 '_preload_content',
                 '_request_timeout',
@@ -164,7 +178,7 @@ class StubOpenaiApi:
             '200': "ChatCompletionResponse",
         }
 
-        return await self.api_client.call_api(
+        return self.api_client.call_api(
             '/api/v1/stub/openai/v1/chat/completions', 'POST',
             _path_params,
             _query_params,
@@ -174,6 +188,7 @@ class StubOpenaiApi:
             files=_files,
             response_types_map=_response_types_map,
             auth_settings=_auth_settings,
+            async_req=_params.get('async_req'),
             _return_http_data_only=_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=_params.get('_preload_content', True),
             _request_timeout=_params.get('_request_timeout'),
@@ -181,12 +196,19 @@ class StubOpenaiApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    async def stubidity_open_ai_completion_call(self, completion : Annotated[Optional[Completion], Field(description="Completion params")] = None, **kwargs) -> CompletionResponse:  # noqa: E501
+    def stubidity_open_ai_completion_call(self, completion : Annotated[Optional[Completion], Field(description="Completion params")] = None, **kwargs) -> CompletionResponse:  # noqa: E501
         """Completion  # noqa: E501
 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.stubidity_open_ai_completion_call(completion, async_req=True)
+        >>> result = thread.get()
 
         :param completion: Completion params
         :type completion: Completion
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request.
                If one number provided, it will be total request
                timeout. It can also be a pair (tuple) of
@@ -200,15 +222,22 @@ class StubOpenaiApi:
         if '_preload_content' in kwargs:
             message = "Error! Please call the stubidity_open_ai_completion_call_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
             raise ValueError(message)
-        return await self.stubidity_open_ai_completion_call_with_http_info(completion, **kwargs)  # noqa: E501
+        return self.stubidity_open_ai_completion_call_with_http_info(completion, **kwargs)  # noqa: E501
 
     @validate_arguments
-    async def stubidity_open_ai_completion_call_with_http_info(self, completion : Annotated[Optional[Completion], Field(description="Completion params")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def stubidity_open_ai_completion_call_with_http_info(self, completion : Annotated[Optional[Completion], Field(description="Completion params")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Completion  # noqa: E501
 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.stubidity_open_ai_completion_call_with_http_info(completion, async_req=True)
+        >>> result = thread.get()
 
         :param completion: Completion params
         :type completion: Completion
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                                  be set to none and raw_data will store the
                                  HTTP response body without reading/decoding.
@@ -239,6 +268,7 @@ class StubOpenaiApi:
         ]
         _all_params.extend(
             [
+                'async_req',
                 '_return_http_data_only',
                 '_preload_content',
                 '_request_timeout',
@@ -293,7 +323,7 @@ class StubOpenaiApi:
             '200': "CompletionResponse",
         }
 
-        return await self.api_client.call_api(
+        return self.api_client.call_api(
             '/api/v1/stub/openai/v1/completions', 'POST',
             _path_params,
             _query_params,
@@ -303,6 +333,7 @@ class StubOpenaiApi:
             files=_files,
             response_types_map=_response_types_map,
             auth_settings=_auth_settings,
+            async_req=_params.get('async_req'),
             _return_http_data_only=_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=_params.get('_preload_content', True),
             _request_timeout=_params.get('_request_timeout'),
@@ -310,12 +341,19 @@ class StubOpenaiApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    async def stubidity_open_ai_embedding_call(self, embedding : Annotated[Optional[Embedding], Field(description="Embedding params")] = None, **kwargs) -> List[EmbeddingResponseInner]:  # noqa: E501
+    def stubidity_open_ai_embedding_call(self, embedding : Annotated[Optional[Embedding], Field(description="Embedding params")] = None, **kwargs) -> List[EmbeddingResponseInner]:  # noqa: E501
         """Embedding  # noqa: E501
 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.stubidity_open_ai_embedding_call(embedding, async_req=True)
+        >>> result = thread.get()
 
         :param embedding: Embedding params
         :type embedding: Embedding
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request.
                If one number provided, it will be total request
                timeout. It can also be a pair (tuple) of
@@ -329,15 +367,22 @@ class StubOpenaiApi:
         if '_preload_content' in kwargs:
             message = "Error! Please call the stubidity_open_ai_embedding_call_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
             raise ValueError(message)
-        return await self.stubidity_open_ai_embedding_call_with_http_info(embedding, **kwargs)  # noqa: E501
+        return self.stubidity_open_ai_embedding_call_with_http_info(embedding, **kwargs)  # noqa: E501
 
     @validate_arguments
-    async def stubidity_open_ai_embedding_call_with_http_info(self, embedding : Annotated[Optional[Embedding], Field(description="Embedding params")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def stubidity_open_ai_embedding_call_with_http_info(self, embedding : Annotated[Optional[Embedding], Field(description="Embedding params")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Embedding  # noqa: E501
 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.stubidity_open_ai_embedding_call_with_http_info(embedding, async_req=True)
+        >>> result = thread.get()
 
         :param embedding: Embedding params
         :type embedding: Embedding
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                                  be set to none and raw_data will store the
                                  HTTP response body without reading/decoding.
@@ -368,6 +413,7 @@ class StubOpenaiApi:
         ]
         _all_params.extend(
             [
+                'async_req',
                 '_return_http_data_only',
                 '_preload_content',
                 '_request_timeout',
@@ -422,7 +468,7 @@ class StubOpenaiApi:
             '200': "List[EmbeddingResponseInner]",
         }
 
-        return await self.api_client.call_api(
+        return self.api_client.call_api(
             '/api/v1/stub/openai/v1/embeddings', 'POST',
             _path_params,
             _query_params,
@@ -432,6 +478,7 @@ class StubOpenaiApi:
             files=_files,
             response_types_map=_response_types_map,
             auth_settings=_auth_settings,
+            async_req=_params.get('async_req'),
             _return_http_data_only=_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=_params.get('_preload_content', True),
             _request_timeout=_params.get('_request_timeout'),
@@ -439,12 +486,19 @@ class StubOpenaiApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    async def stubidity_open_ai_embedding_call__2(self, embedding : Annotated[Optional[Embedding], Field(description="Embedding params")] = None, **kwargs) -> List[EmbeddingResponseInner]:  # noqa: E501
+    def stubidity_open_ai_embedding_call__2(self, embedding : Annotated[Optional[Embedding], Field(description="Embedding params")] = None, **kwargs) -> List[EmbeddingResponseInner]:  # noqa: E501
         """Embedding  # noqa: E501
 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.stubidity_open_ai_embedding_call__2(embedding, async_req=True)
+        >>> result = thread.get()
 
         :param embedding: Embedding params
         :type embedding: Embedding
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _request_timeout: timeout setting for this request.
                If one number provided, it will be total request
                timeout. It can also be a pair (tuple) of
@@ -458,15 +512,22 @@ class StubOpenaiApi:
         if '_preload_content' in kwargs:
             message = "Error! Please call the stubidity_open_ai_embedding_call__2_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
             raise ValueError(message)
-        return await self.stubidity_open_ai_embedding_call__2_with_http_info(embedding, **kwargs)  # noqa: E501
+        return self.stubidity_open_ai_embedding_call__2_with_http_info(embedding, **kwargs)  # noqa: E501
 
     @validate_arguments
-    async def stubidity_open_ai_embedding_call__2_with_http_info(self, embedding : Annotated[Optional[Embedding], Field(description="Embedding params")] = None, **kwargs) -> ApiResponse:  # noqa: E501
+    def stubidity_open_ai_embedding_call__2_with_http_info(self, embedding : Annotated[Optional[Embedding], Field(description="Embedding params")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Embedding  # noqa: E501
 
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+
+        >>> thread = api.stubidity_open_ai_embedding_call__2_with_http_info(embedding, async_req=True)
+        >>> result = thread.get()
 
         :param embedding: Embedding params
         :type embedding: Embedding
+        :param async_req: Whether to execute the request asynchronously.
+        :type async_req: bool, optional
         :param _preload_content: if False, the ApiResponse.data will
                                  be set to none and raw_data will store the
                                  HTTP response body without reading/decoding.
@@ -497,6 +558,7 @@ class StubOpenaiApi:
         ]
         _all_params.extend(
             [
+                'async_req',
                 '_return_http_data_only',
                 '_preload_content',
                 '_request_timeout',
@@ -551,7 +613,7 @@ class StubOpenaiApi:
             '200': "List[EmbeddingResponseInner]",
         }
 
-        return await self.api_client.call_api(
+        return self.api_client.call_api(
             '/api/v1/stub/openai/v1/engines/{model}', 'POST',
             _path_params,
             _query_params,
@@ -561,6 +623,7 @@ class StubOpenaiApi:
             files=_files,
             response_types_map=_response_types_map,
             auth_settings=_auth_settings,
+            async_req=_params.get('async_req'),
             _return_http_data_only=_params.get('_return_http_data_only'),  # noqa: E501
             _preload_content=_params.get('_preload_content', True),
             _request_timeout=_params.get('_request_timeout'),

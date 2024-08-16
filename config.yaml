@@ -1,5 +1,5 @@
 additionalProperties:
-  library: asyncio
+  library: urllib3
   packageName: dreamcatcher
   packageVersion: 0.0.1
   projectName: dreamcatcher-api
