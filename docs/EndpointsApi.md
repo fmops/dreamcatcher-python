@@ -5,8 +5,7 @@ All URIs are relative to *http://localhost:4000*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**dreamcatcher_web_endpoint_controller_index**](EndpointsApi.md#dreamcatcher_web_endpoint_controller_index) | **GET** /api/v1/endpoints | List endpoints
-[**dreamcatcher_web_endpoint_controller_invoke_chat_completions**](EndpointsApi.md#dreamcatcher_web_endpoint_controller_invoke_chat_completions) | **POST** /api/v1/endpoints/{endpoint_name}/azure/openai/deployments/{deployment}/chat/completions | Invoke a chat completion
-[**dreamcatcher_web_endpoint_controller_invoke_chat_completions__2**](EndpointsApi.md#dreamcatcher_web_endpoint_controller_invoke_chat_completions__2) | **POST** /api/v1/endpoints/{endpoint_name}/openai/v1/chat/completions | Invoke a chat completion
+[**dreamcatcher_web_endpoint_controller_invoke_chat_completions**](EndpointsApi.md#dreamcatcher_web_endpoint_controller_invoke_chat_completions) | **POST** /api/v1/endpoints/{endpoint_name}/openai/v1/chat/completions | Invoke a chat completion
 [**dreamcatcher_web_endpoint_controller_invoke_completions**](EndpointsApi.md#dreamcatcher_web_endpoint_controller_invoke_completions) | **POST** /api/v1/endpoints/{endpoint_name}/openai/v1/completions | Invoke a completion
 [**dreamcatcher_web_endpoint_controller_models**](EndpointsApi.md#dreamcatcher_web_endpoint_controller_models) | **GET** /api/v1/endpoints/{endpoint_name}/openai/v1/models | Lists upstreams (ie models) for an endpoint
 [**dreamcatcher_web_endpoint_controller_show**](EndpointsApi.md#dreamcatcher_web_endpoint_controller_show) | **GET** /api/v1/endpoints/{id} | Get an endpoint
@@ -130,84 +129,6 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
         pprint(api_response)
     except Exception as e:
         print("Exception when calling EndpointsApi->dreamcatcher_web_endpoint_controller_invoke_chat_completions: %s\n" % e)
-```
-
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **endpoint_name** | **str**| Endpoint name | 
- **create_chat_completion** | [**CreateChatCompletion**](CreateChatCompletion.md)| Chat completion params | [optional] 
-
-### Return type
-
-[**ChatCompletionResponse**](ChatCompletionResponse.md)
-
-### Authorization
-
-[authorization](../README.md#authorization)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | Chat completion response |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **dreamcatcher_web_endpoint_controller_invoke_chat_completions__2**
-> ChatCompletionResponse dreamcatcher_web_endpoint_controller_invoke_chat_completions__2(endpoint_name, create_chat_completion=create_chat_completion)
-
-Invoke a chat completion
-
-### Example
-
-* Bearer Authentication (authorization):
-```python
-import time
-import os
-import dreamcatcher
-from dreamcatcher.models.chat_completion_response import ChatCompletionResponse
-from dreamcatcher.models.create_chat_completion import CreateChatCompletion
-from dreamcatcher.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to http://localhost:4000
-# See configuration.py for a list of all supported configuration parameters.
-configuration = dreamcatcher.Configuration(
-    host = "http://localhost:4000"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: authorization
-configuration = dreamcatcher.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-async with dreamcatcher.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = dreamcatcher.EndpointsApi(api_client)
-    endpoint_name = 'demo-endpoint' # str | Endpoint name
-    create_chat_completion = dreamcatcher.CreateChatCompletion() # CreateChatCompletion | Chat completion params (optional)
-
-    try:
-        # Invoke a chat completion
-        api_response = await api_instance.dreamcatcher_web_endpoint_controller_invoke_chat_completions__2(endpoint_name, create_chat_completion=create_chat_completion)
-        print("The response of EndpointsApi->dreamcatcher_web_endpoint_controller_invoke_chat_completions__2:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling EndpointsApi->dreamcatcher_web_endpoint_controller_invoke_chat_completions__2: %s\n" % e)
 ```
 
 

@@ -47,7 +47,7 @@ async def main():
         )
         try:
             # Invoke a chat completion
-            api_response = await api_instance.dreamcatcher_web_endpoint_controller_invoke_chat_completions__2(endpoint_name, create_chat_completion=create_chat_completion)
+            api_response = await api_instance.dreamcatcher_web_endpoint_controller_invoke_chat_completions(endpoint_name, create_chat_completion=create_chat_completion)
             print("The response of EndpointsApi->dreamcatcher_web_endpoint_controller_invoke_chat_completions:\n")
             pprint(api_response)
         except Exception as e:
