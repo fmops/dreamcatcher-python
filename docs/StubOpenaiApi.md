@@ -1,6 +1,6 @@
 # dreamcatcher.StubOpenaiApi
 
-All URIs are relative to *https://dreamcatcher.blueteam.ai*
+All URIs are relative to *http://localhost:4000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,10 +26,10 @@ from dreamcatcher.models.create_chat_completion import CreateChatCompletion
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
+# Defining the host is optional and defaults to http://localhost:4000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "https://dreamcatcher.blueteam.ai"
+    host = "http://localhost:4000"
 )
 
 
@@ -92,10 +92,10 @@ from dreamcatcher.models.completion_response import CompletionResponse
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
+# Defining the host is optional and defaults to http://localhost:4000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "https://dreamcatcher.blueteam.ai"
+    host = "http://localhost:4000"
 )
 
 
@@ -158,10 +158,10 @@ from dreamcatcher.models.embedding_response_inner import EmbeddingResponseInner
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
+# Defining the host is optional and defaults to http://localhost:4000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "https://dreamcatcher.blueteam.ai"
+    host = "http://localhost:4000"
 )
 
 
@@ -224,10 +224,10 @@ from dreamcatcher.models.embedding_response_inner import EmbeddingResponseInner
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
+# Defining the host is optional and defaults to http://localhost:4000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "https://dreamcatcher.blueteam.ai"
+    host = "http://localhost:4000"
 )
 
 

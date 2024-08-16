@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **active** | **bool** |  | [optional] 
 **anonymizer** | [**DlpPolicyAnonymizer**](DlpPolicyAnonymizer.md) |  | [optional] 
 **entities** | **List[str]** |  | [optional] 
+**id** | **float** |  | [optional] 
 **name** | **str** |  | [optional] 
 **response** | **str** |  | [optional] 
 **score_threshold** | **float** |  | [optional] 

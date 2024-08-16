@@ -27,9 +27,10 @@ class ContentModerationPolicy(BaseModel):
     """
     active: Optional[StrictBool] = None
     blocked_content_types: Optional[conlist(StrictStr)] = None
+    id: Optional[Union[StrictFloat, StrictInt]] = None
     name: Optional[StrictStr] = None
     score_threshold: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties = ["active", "blocked_content_types", "name", "score_threshold"]
+    __properties = ["active", "blocked_content_types", "id", "name", "score_threshold"]
 
     @validator('blocked_content_types')
     def blocked_content_types_validate_enum(cls, value):
@@ -80,6 +81,7 @@ class ContentModerationPolicy(BaseModel):
         _obj = ContentModerationPolicy.parse_obj({
             "active": obj.get("active"),
             "blocked_content_types": obj.get("blocked_content_types"),
+            "id": obj.get("id"),
             "name": obj.get("name"),
             "score_threshold": obj.get("score_threshold")
         })

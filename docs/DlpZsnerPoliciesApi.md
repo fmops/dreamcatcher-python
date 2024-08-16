@@ -1,6 +1,6 @@
 # dreamcatcher.DlpZsnerPoliciesApi
 
-All URIs are relative to *https://dreamcatcher.blueteam.ai*
+All URIs are relative to *http://localhost:4000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,8 +8,8 @@ Method | HTTP request | Description
 [**dreamcatcher_web_zero_shot_ner_policy_controller_delete**](DlpZsnerPoliciesApi.md#dreamcatcher_web_zero_shot_ner_policy_controller_delete) | **DELETE** /api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id} | Delete a DLP ZSNER policy
 [**dreamcatcher_web_zero_shot_ner_policy_controller_scan**](DlpZsnerPoliciesApi.md#dreamcatcher_web_zero_shot_ner_policy_controller_scan) | **POST** /api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id}/scan | Scan content with a DLP ZSNER policy
 [**dreamcatcher_web_zero_shot_ner_policy_controller_show**](DlpZsnerPoliciesApi.md#dreamcatcher_web_zero_shot_ner_policy_controller_show) | **GET** /api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id} | Get a DLP ZSNER policy
-[**dreamcatcher_web_zero_shot_ner_policy_controller_update**](DlpZsnerPoliciesApi.md#dreamcatcher_web_zero_shot_ner_policy_controller_update) | **PUT** /api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id} | Update a DLP ZSNER policy
-[**dreamcatcher_web_zero_shot_ner_policy_controller_update__2**](DlpZsnerPoliciesApi.md#dreamcatcher_web_zero_shot_ner_policy_controller_update__2) | **PATCH** /api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id} | Update a DLP ZSNER policy
+[**dreamcatcher_web_zero_shot_ner_policy_controller_update**](DlpZsnerPoliciesApi.md#dreamcatcher_web_zero_shot_ner_policy_controller_update) | **PATCH** /api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id} | Update a DLP ZSNER policy
+[**dreamcatcher_web_zero_shot_ner_policy_controller_update__2**](DlpZsnerPoliciesApi.md#dreamcatcher_web_zero_shot_ner_policy_controller_update__2) | **PUT** /api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id} | Update a DLP ZSNER policy
 
 
 # **dreamcatcher_web_zero_shot_ner_policy_controller_create**
@@ -29,10 +29,10 @@ from dreamcatcher.models.dlp_zsner_policy_params import DlpZsnerPolicyParams
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
+# Defining the host is optional and defaults to http://localhost:4000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "https://dreamcatcher.blueteam.ai"
+    host = "http://localhost:4000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -105,10 +105,10 @@ import dreamcatcher
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
+# Defining the host is optional and defaults to http://localhost:4000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "https://dreamcatcher.blueteam.ai"
+    host = "http://localhost:4000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -181,10 +181,10 @@ from dreamcatcher.models.dreamcatcher_web_presidio_policy_controller_scan_reques
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
+# Defining the host is optional and defaults to http://localhost:4000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "https://dreamcatcher.blueteam.ai"
+    host = "http://localhost:4000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -260,10 +260,10 @@ from dreamcatcher.models.dlp_zsner_policy import DlpZsnerPolicy
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
+# Defining the host is optional and defaults to http://localhost:4000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "https://dreamcatcher.blueteam.ai"
+    host = "http://localhost:4000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -338,10 +338,10 @@ from dreamcatcher.models.dlp_zsner_policy_params import DlpZsnerPolicyParams
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
+# Defining the host is optional and defaults to http://localhost:4000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "https://dreamcatcher.blueteam.ai"
+    host = "http://localhost:4000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -418,10 +418,10 @@ from dreamcatcher.models.dlp_zsner_policy_params import DlpZsnerPolicyParams
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
+# Defining the host is optional and defaults to http://localhost:4000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "https://dreamcatcher.blueteam.ai"
+    host = "http://localhost:4000"
 )
 
 # The client must configure the authentication and authorization parameters

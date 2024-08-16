@@ -18,8 +18,8 @@ import re  # noqa: F401
 import json
 
 
-from typing import Optional
-from pydantic import BaseModel, StrictStr
+from typing import List, Optional
+from pydantic import BaseModel, StrictStr, conlist
 from dreamcatcher.models.content_moderation_policy import ContentModerationPolicy
 from dreamcatcher.models.dlp_policy import DlpPolicy
 from dreamcatcher.models.dlp_zsner_policy import DlpZsnerPolicy
@@ -28,9 +28,9 @@ class ShowEndpointResponse(BaseModel):
     """
     ShowEndpointResponse
     """
-    content_moderation_policies: Optional[ContentModerationPolicy] = None
-    dlp_policies: Optional[DlpPolicy] = None
-    dlp_zsner_policies: Optional[DlpZsnerPolicy] = None
+    content_moderation_policies: Optional[conlist(ContentModerationPolicy)] = None
+    dlp_policies: Optional[conlist(DlpPolicy)] = None
+    dlp_zsner_policies: Optional[conlist(DlpZsnerPolicy)] = None
     name: Optional[StrictStr] = None
     __properties = ["content_moderation_policies", "dlp_policies", "dlp_zsner_policies", "name"]
 
@@ -58,15 +58,27 @@ class ShowEndpointResponse(BaseModel):
                           exclude={
                           },
                           exclude_none=True)
-        # override the default output from pydantic by calling `to_dict()` of content_moderation_policies
+        # override the default output from pydantic by calling `to_dict()` of each item in content_moderation_policies (list)
+        _items = []
         if self.content_moderation_policies:
-            _dict['content_moderation_policies'] = self.content_moderation_policies.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of dlp_policies
+            for _item in self.content_moderation_policies:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['content_moderation_policies'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in dlp_policies (list)
+        _items = []
         if self.dlp_policies:
-            _dict['dlp_policies'] = self.dlp_policies.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of dlp_zsner_policies
+            for _item in self.dlp_policies:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['dlp_policies'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in dlp_zsner_policies (list)
+        _items = []
         if self.dlp_zsner_policies:
-            _dict['dlp_zsner_policies'] = self.dlp_zsner_policies.to_dict()
+            for _item in self.dlp_zsner_policies:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['dlp_zsner_policies'] = _items
         return _dict
 
     @classmethod
@@ -79,9 +91,9 @@ class ShowEndpointResponse(BaseModel):
             return ShowEndpointResponse.parse_obj(obj)
 
         _obj = ShowEndpointResponse.parse_obj({
-            "content_moderation_policies": ContentModerationPolicy.from_dict(obj.get("content_moderation_policies")) if obj.get("content_moderation_policies") is not None else None,
-            "dlp_policies": DlpPolicy.from_dict(obj.get("dlp_policies")) if obj.get("dlp_policies") is not None else None,
-            "dlp_zsner_policies": DlpZsnerPolicy.from_dict(obj.get("dlp_zsner_policies")) if obj.get("dlp_zsner_policies") is not None else None,
+            "content_moderation_policies": [ContentModerationPolicy.from_dict(_item) for _item in obj.get("content_moderation_policies")] if obj.get("content_moderation_policies") is not None else None,
+            "dlp_policies": [DlpPolicy.from_dict(_item) for _item in obj.get("dlp_policies")] if obj.get("dlp_policies") is not None else None,
+            "dlp_zsner_policies": [DlpZsnerPolicy.from_dict(_item) for _item in obj.get("dlp_zsner_policies")] if obj.get("dlp_zsner_policies") is not None else None,
             "name": obj.get("name")
         })
         return _obj

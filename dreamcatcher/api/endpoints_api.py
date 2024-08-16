@@ -22,10 +22,12 @@ from typing import overload, Optional, Union, Awaitable
 from typing_extensions import Annotated
 from pydantic import Field, StrictStr
 
-from typing import List
+from typing import List, Optional
 
 from dreamcatcher.models.chat_completion_response import ChatCompletionResponse
+from dreamcatcher.models.completion import Completion
 from dreamcatcher.models.completion_response import CompletionResponse
+from dreamcatcher.models.create_chat_completion import CreateChatCompletion
 from dreamcatcher.models.list_endpoint_response_inner import ListEndpointResponseInner
 from dreamcatcher.models.list_models_response import ListModelsResponse
 from dreamcatcher.models.show_endpoint_response import ShowEndpointResponse
@@ -165,12 +167,14 @@ class EndpointsApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    async def dreamcatcher_web_endpoint_controller_invoke_chat_completions(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], **kwargs) -> ChatCompletionResponse:  # noqa: E501
+    async def dreamcatcher_web_endpoint_controller_invoke_chat_completions(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], create_chat_completion : Annotated[Optional[CreateChatCompletion], Field(description="Chat completion params")] = None, **kwargs) -> ChatCompletionResponse:  # noqa: E501
         """Invoke a chat completion  # noqa: E501
 
 
         :param endpoint_name: Endpoint name (required)
         :type endpoint_name: str
+        :param create_chat_completion: Chat completion params
+        :type create_chat_completion: CreateChatCompletion
         :param _request_timeout: timeout setting for this request.
                If one number provided, it will be total request
                timeout. It can also be a pair (tuple) of
@@ -184,15 +188,17 @@ class EndpointsApi:
         if '_preload_content' in kwargs:
             message = "Error! Please call the dreamcatcher_web_endpoint_controller_invoke_chat_completions_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
             raise ValueError(message)
-        return await self.dreamcatcher_web_endpoint_controller_invoke_chat_completions_with_http_info(endpoint_name, **kwargs)  # noqa: E501
+        return await self.dreamcatcher_web_endpoint_controller_invoke_chat_completions_with_http_info(endpoint_name, create_chat_completion, **kwargs)  # noqa: E501
 
     @validate_arguments
-    async def dreamcatcher_web_endpoint_controller_invoke_chat_completions_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], **kwargs) -> ApiResponse:  # noqa: E501
+    async def dreamcatcher_web_endpoint_controller_invoke_chat_completions_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], create_chat_completion : Annotated[Optional[CreateChatCompletion], Field(description="Chat completion params")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Invoke a chat completion  # noqa: E501
 
 
         :param endpoint_name: Endpoint name (required)
         :type endpoint_name: str
+        :param create_chat_completion: Chat completion params
+        :type create_chat_completion: CreateChatCompletion
         :param _preload_content: if False, the ApiResponse.data will
                                  be set to none and raw_data will store the
                                  HTTP response body without reading/decoding.
@@ -219,7 +225,8 @@ class EndpointsApi:
         _params = locals()
 
         _all_params = [
-            'endpoint_name'
+            'endpoint_name',
+            'create_chat_completion'
         ]
         _all_params.extend(
             [
@@ -259,9 +266,19 @@ class EndpointsApi:
         _files = {}
         # process the body parameter
         _body_params = None
+        if _params['create_chat_completion'] is not None:
+            _body_params = _params['create_chat_completion']
+
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
+
+        # set the HTTP header `Content-Type`
+        _content_types_list = _params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json']))
+        if _content_types_list:
+                _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
         _auth_settings = ['authorization']  # noqa: E501
@@ -287,12 +304,14 @@ class EndpointsApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    async def dreamcatcher_web_endpoint_controller_invoke_chat_completions__2(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], **kwargs) -> ChatCompletionResponse:  # noqa: E501
+    async def dreamcatcher_web_endpoint_controller_invoke_chat_completions__2(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], create_chat_completion : Annotated[Optional[CreateChatCompletion], Field(description="Chat completion params")] = None, **kwargs) -> ChatCompletionResponse:  # noqa: E501
         """Invoke a chat completion  # noqa: E501
 
 
         :param endpoint_name: Endpoint name (required)
         :type endpoint_name: str
+        :param create_chat_completion: Chat completion params
+        :type create_chat_completion: CreateChatCompletion
         :param _request_timeout: timeout setting for this request.
                If one number provided, it will be total request
                timeout. It can also be a pair (tuple) of
@@ -306,15 +325,17 @@ class EndpointsApi:
         if '_preload_content' in kwargs:
             message = "Error! Please call the dreamcatcher_web_endpoint_controller_invoke_chat_completions__2_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
             raise ValueError(message)
-        return await self.dreamcatcher_web_endpoint_controller_invoke_chat_completions__2_with_http_info(endpoint_name, **kwargs)  # noqa: E501
+        return await self.dreamcatcher_web_endpoint_controller_invoke_chat_completions__2_with_http_info(endpoint_name, create_chat_completion, **kwargs)  # noqa: E501
 
     @validate_arguments
-    async def dreamcatcher_web_endpoint_controller_invoke_chat_completions__2_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], **kwargs) -> ApiResponse:  # noqa: E501
+    async def dreamcatcher_web_endpoint_controller_invoke_chat_completions__2_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], create_chat_completion : Annotated[Optional[CreateChatCompletion], Field(description="Chat completion params")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Invoke a chat completion  # noqa: E501
 
 
         :param endpoint_name: Endpoint name (required)
         :type endpoint_name: str
+        :param create_chat_completion: Chat completion params
+        :type create_chat_completion: CreateChatCompletion
         :param _preload_content: if False, the ApiResponse.data will
                                  be set to none and raw_data will store the
                                  HTTP response body without reading/decoding.
@@ -341,7 +362,8 @@ class EndpointsApi:
         _params = locals()
 
         _all_params = [
-            'endpoint_name'
+            'endpoint_name',
+            'create_chat_completion'
         ]
         _all_params.extend(
             [
@@ -381,9 +403,19 @@ class EndpointsApi:
         _files = {}
         # process the body parameter
         _body_params = None
+        if _params['create_chat_completion'] is not None:
+            _body_params = _params['create_chat_completion']
+
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
+
+        # set the HTTP header `Content-Type`
+        _content_types_list = _params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json']))
+        if _content_types_list:
+                _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
         _auth_settings = ['authorization']  # noqa: E501
@@ -409,12 +441,14 @@ class EndpointsApi:
             _request_auth=_params.get('_request_auth'))
 
     @validate_arguments
-    async def dreamcatcher_web_endpoint_controller_invoke_completions(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], **kwargs) -> CompletionResponse:  # noqa: E501
+    async def dreamcatcher_web_endpoint_controller_invoke_completions(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], completion : Annotated[Optional[Completion], Field(description="Completion params")] = None, **kwargs) -> CompletionResponse:  # noqa: E501
         """Invoke a completion  # noqa: E501
 
 
         :param endpoint_name: Endpoint name (required)
         :type endpoint_name: str
+        :param completion: Completion params
+        :type completion: Completion
         :param _request_timeout: timeout setting for this request.
                If one number provided, it will be total request
                timeout. It can also be a pair (tuple) of
@@ -428,15 +462,17 @@ class EndpointsApi:
         if '_preload_content' in kwargs:
             message = "Error! Please call the dreamcatcher_web_endpoint_controller_invoke_completions_with_http_info method with `_preload_content` instead and obtain raw data from ApiResponse.raw_data"  # noqa: E501
             raise ValueError(message)
-        return await self.dreamcatcher_web_endpoint_controller_invoke_completions_with_http_info(endpoint_name, **kwargs)  # noqa: E501
+        return await self.dreamcatcher_web_endpoint_controller_invoke_completions_with_http_info(endpoint_name, completion, **kwargs)  # noqa: E501
 
     @validate_arguments
-    async def dreamcatcher_web_endpoint_controller_invoke_completions_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], **kwargs) -> ApiResponse:  # noqa: E501
+    async def dreamcatcher_web_endpoint_controller_invoke_completions_with_http_info(self, endpoint_name : Annotated[StrictStr, Field(..., description="Endpoint name")], completion : Annotated[Optional[Completion], Field(description="Completion params")] = None, **kwargs) -> ApiResponse:  # noqa: E501
         """Invoke a completion  # noqa: E501
 
 
         :param endpoint_name: Endpoint name (required)
         :type endpoint_name: str
+        :param completion: Completion params
+        :type completion: Completion
         :param _preload_content: if False, the ApiResponse.data will
                                  be set to none and raw_data will store the
                                  HTTP response body without reading/decoding.
@@ -463,7 +499,8 @@ class EndpointsApi:
         _params = locals()
 
         _all_params = [
-            'endpoint_name'
+            'endpoint_name',
+            'completion'
         ]
         _all_params.extend(
             [
@@ -503,9 +540,19 @@ class EndpointsApi:
         _files = {}
         # process the body parameter
         _body_params = None
+        if _params['completion'] is not None:
+            _body_params = _params['completion']
+
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
             ['application/json'])  # noqa: E501
+
+        # set the HTTP header `Content-Type`
+        _content_types_list = _params.get('_content_type',
+            self.api_client.select_header_content_type(
+                ['application/json']))
+        if _content_types_list:
+                _header_params['Content-Type'] = _content_types_list
 
         # authentication setting
         _auth_settings = ['authorization']  # noqa: E501

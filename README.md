@@ -56,10 +56,10 @@ import dreamcatcher
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
+# Defining the host is optional and defaults to http://localhost:4000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "https://dreamcatcher.blueteam.ai"
+    host = "http://localhost:4000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -92,7 +92,7 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://dreamcatcher.blueteam.ai*
+All URIs are relative to *http://localhost:4000*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -100,14 +100,14 @@ Class | Method | HTTP request | Description
 *DlpPoliciesApi* | [**dreamcatcher_web_presidio_policy_controller_delete**](docs/DlpPoliciesApi.md#dreamcatcher_web_presidio_policy_controller_delete) | **DELETE** /api/v1/endpoints/{endpoint_name}/policies/dlp/{id} | Delete a DLP policy
 *DlpPoliciesApi* | [**dreamcatcher_web_presidio_policy_controller_scan**](docs/DlpPoliciesApi.md#dreamcatcher_web_presidio_policy_controller_scan) | **POST** /api/v1/endpoints/{endpoint_name}/policies/dlp/{id}/scan | Scan content with a DLP policy
 *DlpPoliciesApi* | [**dreamcatcher_web_presidio_policy_controller_show**](docs/DlpPoliciesApi.md#dreamcatcher_web_presidio_policy_controller_show) | **GET** /api/v1/endpoints/{endpoint_name}/policies/dlp/{id} | Get a DLP policy
-*DlpPoliciesApi* | [**dreamcatcher_web_presidio_policy_controller_update**](docs/DlpPoliciesApi.md#dreamcatcher_web_presidio_policy_controller_update) | **PUT** /api/v1/endpoints/{endpoint_name}/policies/dlp/{id} | Update a DLP policy
-*DlpPoliciesApi* | [**dreamcatcher_web_presidio_policy_controller_update__2**](docs/DlpPoliciesApi.md#dreamcatcher_web_presidio_policy_controller_update__2) | **PATCH** /api/v1/endpoints/{endpoint_name}/policies/dlp/{id} | Update a DLP policy
+*DlpPoliciesApi* | [**dreamcatcher_web_presidio_policy_controller_update**](docs/DlpPoliciesApi.md#dreamcatcher_web_presidio_policy_controller_update) | **PATCH** /api/v1/endpoints/{endpoint_name}/policies/dlp/{id} | Update a DLP policy
+*DlpPoliciesApi* | [**dreamcatcher_web_presidio_policy_controller_update__2**](docs/DlpPoliciesApi.md#dreamcatcher_web_presidio_policy_controller_update__2) | **PUT** /api/v1/endpoints/{endpoint_name}/policies/dlp/{id} | Update a DLP policy
 *DlpZsnerPoliciesApi* | [**dreamcatcher_web_zero_shot_ner_policy_controller_create**](docs/DlpZsnerPoliciesApi.md#dreamcatcher_web_zero_shot_ner_policy_controller_create) | **POST** /api/v1/endpoints/{endpoint_name}/policies/dlp_zsner | Create a DLP ZSNER policy
 *DlpZsnerPoliciesApi* | [**dreamcatcher_web_zero_shot_ner_policy_controller_delete**](docs/DlpZsnerPoliciesApi.md#dreamcatcher_web_zero_shot_ner_policy_controller_delete) | **DELETE** /api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id} | Delete a DLP ZSNER policy
 *DlpZsnerPoliciesApi* | [**dreamcatcher_web_zero_shot_ner_policy_controller_scan**](docs/DlpZsnerPoliciesApi.md#dreamcatcher_web_zero_shot_ner_policy_controller_scan) | **POST** /api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id}/scan | Scan content with a DLP ZSNER policy
 *DlpZsnerPoliciesApi* | [**dreamcatcher_web_zero_shot_ner_policy_controller_show**](docs/DlpZsnerPoliciesApi.md#dreamcatcher_web_zero_shot_ner_policy_controller_show) | **GET** /api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id} | Get a DLP ZSNER policy
-*DlpZsnerPoliciesApi* | [**dreamcatcher_web_zero_shot_ner_policy_controller_update**](docs/DlpZsnerPoliciesApi.md#dreamcatcher_web_zero_shot_ner_policy_controller_update) | **PUT** /api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id} | Update a DLP ZSNER policy
-*DlpZsnerPoliciesApi* | [**dreamcatcher_web_zero_shot_ner_policy_controller_update__2**](docs/DlpZsnerPoliciesApi.md#dreamcatcher_web_zero_shot_ner_policy_controller_update__2) | **PATCH** /api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id} | Update a DLP ZSNER policy
+*DlpZsnerPoliciesApi* | [**dreamcatcher_web_zero_shot_ner_policy_controller_update**](docs/DlpZsnerPoliciesApi.md#dreamcatcher_web_zero_shot_ner_policy_controller_update) | **PATCH** /api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id} | Update a DLP ZSNER policy
+*DlpZsnerPoliciesApi* | [**dreamcatcher_web_zero_shot_ner_policy_controller_update__2**](docs/DlpZsnerPoliciesApi.md#dreamcatcher_web_zero_shot_ner_policy_controller_update__2) | **PUT** /api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id} | Update a DLP ZSNER policy
 *EndpointsApi* | [**dreamcatcher_web_endpoint_controller_index**](docs/EndpointsApi.md#dreamcatcher_web_endpoint_controller_index) | **GET** /api/v1/endpoints | List endpoints
 *EndpointsApi* | [**dreamcatcher_web_endpoint_controller_invoke_chat_completions**](docs/EndpointsApi.md#dreamcatcher_web_endpoint_controller_invoke_chat_completions) | **POST** /api/v1/endpoints/{endpoint_name}/azure/openai/deployments/{deployment}/chat/completions | Invoke a chat completion
 *EndpointsApi* | [**dreamcatcher_web_endpoint_controller_invoke_chat_completions__2**](docs/EndpointsApi.md#dreamcatcher_web_endpoint_controller_invoke_chat_completions__2) | **POST** /api/v1/endpoints/{endpoint_name}/openai/v1/chat/completions | Invoke a chat completion

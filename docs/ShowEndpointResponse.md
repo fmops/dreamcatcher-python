@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**content_moderation_policies** | [**ContentModerationPolicy**](ContentModerationPolicy.md) |  | [optional] 
-**dlp_policies** | [**DlpPolicy**](DlpPolicy.md) |  | [optional] 
-**dlp_zsner_policies** | [**DlpZsnerPolicy**](DlpZsnerPolicy.md) |  | [optional] 
+**content_moderation_policies** | [**List[ContentModerationPolicy]**](ContentModerationPolicy.md) |  | [optional] 
+**dlp_policies** | [**List[DlpPolicy]**](DlpPolicy.md) |  | [optional] 
+**dlp_zsner_policies** | [**List[DlpZsnerPolicy]**](DlpZsnerPolicy.md) |  | [optional] 
 **name** | **str** |  | [optional] 
 
 ## Example

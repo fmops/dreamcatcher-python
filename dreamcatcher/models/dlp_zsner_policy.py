@@ -30,10 +30,11 @@ class DlpZsnerPolicy(BaseModel):
     active: Optional[StrictBool] = None
     anonymizer: Optional[DlpPolicyAnonymizer] = None
     entities: Optional[conlist(DlpZsnerPolicyEntitiesInner)] = None
+    id: Optional[Union[StrictFloat, StrictInt]] = None
     name: Optional[StrictStr] = None
     response: Optional[StrictStr] = None
     score_threshold: Optional[Union[StrictFloat, StrictInt]] = None
-    __properties = ["active", "anonymizer", "entities", "name", "response", "score_threshold"]
+    __properties = ["active", "anonymizer", "entities", "id", "name", "response", "score_threshold"]
 
     @validator('response')
     def response_validate_enum(cls, value):
@@ -94,6 +95,7 @@ class DlpZsnerPolicy(BaseModel):
             "active": obj.get("active"),
             "anonymizer": DlpPolicyAnonymizer.from_dict(obj.get("anonymizer")) if obj.get("anonymizer") is not None else None,
             "entities": [DlpZsnerPolicyEntitiesInner.from_dict(_item) for _item in obj.get("entities")] if obj.get("entities") is not None else None,
+            "id": obj.get("id"),
             "name": obj.get("name"),
             "response": obj.get("response"),
             "score_threshold": obj.get("score_threshold")

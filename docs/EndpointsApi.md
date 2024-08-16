@@ -1,6 +1,6 @@
 # dreamcatcher.EndpointsApi
 
-All URIs are relative to *https://dreamcatcher.blueteam.ai*
+All URIs are relative to *http://localhost:4000*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,10 +28,10 @@ from dreamcatcher.models.list_endpoint_response_inner import ListEndpointRespons
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
+# Defining the host is optional and defaults to http://localhost:4000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "https://dreamcatcher.blueteam.ai"
+    host = "http://localhost:4000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -84,7 +84,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dreamcatcher_web_endpoint_controller_invoke_chat_completions**
-> ChatCompletionResponse dreamcatcher_web_endpoint_controller_invoke_chat_completions(endpoint_name)
+> ChatCompletionResponse dreamcatcher_web_endpoint_controller_invoke_chat_completions(endpoint_name, create_chat_completion=create_chat_completion)
 
 Invoke a chat completion
 
@@ -96,13 +96,14 @@ import time
 import os
 import dreamcatcher
 from dreamcatcher.models.chat_completion_response import ChatCompletionResponse
+from dreamcatcher.models.create_chat_completion import CreateChatCompletion
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
+# Defining the host is optional and defaults to http://localhost:4000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "https://dreamcatcher.blueteam.ai"
+    host = "http://localhost:4000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -120,10 +121,11 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dreamcatcher.EndpointsApi(api_client)
     endpoint_name = 'demo-endpoint' # str | Endpoint name
+    create_chat_completion = dreamcatcher.CreateChatCompletion() # CreateChatCompletion | Chat completion params (optional)
 
     try:
         # Invoke a chat completion
-        api_response = await api_instance.dreamcatcher_web_endpoint_controller_invoke_chat_completions(endpoint_name)
+        api_response = await api_instance.dreamcatcher_web_endpoint_controller_invoke_chat_completions(endpoint_name, create_chat_completion=create_chat_completion)
         print("The response of EndpointsApi->dreamcatcher_web_endpoint_controller_invoke_chat_completions:\n")
         pprint(api_response)
     except Exception as e:
@@ -137,6 +139,7 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **endpoint_name** | **str**| Endpoint name | 
+ **create_chat_completion** | [**CreateChatCompletion**](CreateChatCompletion.md)| Chat completion params | [optional] 
 
 ### Return type
 
@@ -148,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -159,7 +162,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dreamcatcher_web_endpoint_controller_invoke_chat_completions__2**
-> ChatCompletionResponse dreamcatcher_web_endpoint_controller_invoke_chat_completions__2(endpoint_name)
+> ChatCompletionResponse dreamcatcher_web_endpoint_controller_invoke_chat_completions__2(endpoint_name, create_chat_completion=create_chat_completion)
 
 Invoke a chat completion
 
@@ -171,13 +174,14 @@ import time
 import os
 import dreamcatcher
 from dreamcatcher.models.chat_completion_response import ChatCompletionResponse
+from dreamcatcher.models.create_chat_completion import CreateChatCompletion
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
+# Defining the host is optional and defaults to http://localhost:4000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "https://dreamcatcher.blueteam.ai"
+    host = "http://localhost:4000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -195,10 +199,11 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dreamcatcher.EndpointsApi(api_client)
     endpoint_name = 'demo-endpoint' # str | Endpoint name
+    create_chat_completion = dreamcatcher.CreateChatCompletion() # CreateChatCompletion | Chat completion params (optional)
 
     try:
         # Invoke a chat completion
-        api_response = await api_instance.dreamcatcher_web_endpoint_controller_invoke_chat_completions__2(endpoint_name)
+        api_response = await api_instance.dreamcatcher_web_endpoint_controller_invoke_chat_completions__2(endpoint_name, create_chat_completion=create_chat_completion)
         print("The response of EndpointsApi->dreamcatcher_web_endpoint_controller_invoke_chat_completions__2:\n")
         pprint(api_response)
     except Exception as e:
@@ -212,6 +217,7 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **endpoint_name** | **str**| Endpoint name | 
+ **create_chat_completion** | [**CreateChatCompletion**](CreateChatCompletion.md)| Chat completion params | [optional] 
 
 ### Return type
 
@@ -223,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -234,7 +240,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **dreamcatcher_web_endpoint_controller_invoke_completions**
-> CompletionResponse dreamcatcher_web_endpoint_controller_invoke_completions(endpoint_name)
+> CompletionResponse dreamcatcher_web_endpoint_controller_invoke_completions(endpoint_name, completion=completion)
 
 Invoke a completion
 
@@ -245,14 +251,15 @@ Invoke a completion
 import time
 import os
 import dreamcatcher
+from dreamcatcher.models.completion import Completion
 from dreamcatcher.models.completion_response import CompletionResponse
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
+# Defining the host is optional and defaults to http://localhost:4000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "https://dreamcatcher.blueteam.ai"
+    host = "http://localhost:4000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -270,10 +277,11 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = dreamcatcher.EndpointsApi(api_client)
     endpoint_name = 'demo-endpoint' # str | Endpoint name
+    completion = dreamcatcher.Completion() # Completion | Completion params (optional)
 
     try:
         # Invoke a completion
-        api_response = await api_instance.dreamcatcher_web_endpoint_controller_invoke_completions(endpoint_name)
+        api_response = await api_instance.dreamcatcher_web_endpoint_controller_invoke_completions(endpoint_name, completion=completion)
         print("The response of EndpointsApi->dreamcatcher_web_endpoint_controller_invoke_completions:\n")
         pprint(api_response)
     except Exception as e:
@@ -287,6 +295,7 @@ async with dreamcatcher.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **endpoint_name** | **str**| Endpoint name | 
+ **completion** | [**Completion**](Completion.md)| Completion params | [optional] 
 
 ### Return type
 
@@ -298,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 ### HTTP response details
@@ -324,10 +333,10 @@ from dreamcatcher.models.list_models_response import ListModelsResponse
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
+# Defining the host is optional and defaults to http://localhost:4000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "https://dreamcatcher.blueteam.ai"
+    host = "http://localhost:4000"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -399,10 +408,10 @@ from dreamcatcher.models.show_endpoint_response import ShowEndpointResponse
 from dreamcatcher.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://dreamcatcher.blueteam.ai
+# Defining the host is optional and defaults to http://localhost:4000
 # See configuration.py for a list of all supported configuration parameters.
 configuration = dreamcatcher.Configuration(
-    host = "https://dreamcatcher.blueteam.ai"
+    host = "http://localhost:4000"
 )
 
 # The client must configure the authentication and authorization parameters

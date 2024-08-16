@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **active** | **bool** |  | [optional] 
 **blocked_content_types** | **List[str]** |  | [optional] 
+**id** | **float** |  | [optional] 
 **name** | **str** |  | [optional] 
 **score_threshold** | **float** |  | [optional] 
 

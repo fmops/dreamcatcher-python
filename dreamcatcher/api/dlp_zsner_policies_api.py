@@ -715,7 +715,7 @@ class DlpZsnerPoliciesApi:
         }
 
         return await self.api_client.call_api(
-            '/api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id}', 'PUT',
+            '/api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id}', 'PATCH',
             _path_params,
             _query_params,
             _header_params,
@@ -860,7 +860,7 @@ class DlpZsnerPoliciesApi:
         }
 
         return await self.api_client.call_api(
-            '/api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id}', 'PATCH',
+            '/api/v1/endpoints/{endpoint_name}/policies/dlp_zsner/{id}', 'PUT',
             _path_params,
             _query_params,
             _header_params,

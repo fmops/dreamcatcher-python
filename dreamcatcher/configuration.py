@@ -67,7 +67,7 @@ class Configuration:
                  ) -> None:
         """Constructor
         """
-        self._base_path = "https://dreamcatcher.blueteam.ai" if host is None else host
+        self._base_path = "http://localhost:4000" if host is None else host
         """Default Base url
         """
         self.server_index = 0 if server_index is None and host is None else server_index
@@ -382,7 +382,7 @@ class Configuration:
         """
         return [
             {
-                'url': "https://dreamcatcher.blueteam.ai",
+                'url': "http://localhost:4000",
                 'description': "No description provided",
             }
         ]

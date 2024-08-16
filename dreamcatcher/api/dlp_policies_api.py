@@ -715,7 +715,7 @@ class DlpPoliciesApi:
         }
 
         return await self.api_client.call_api(
-            '/api/v1/endpoints/{endpoint_name}/policies/dlp/{id}', 'PUT',
+            '/api/v1/endpoints/{endpoint_name}/policies/dlp/{id}', 'PATCH',
             _path_params,
             _query_params,
             _header_params,
@@ -860,7 +860,7 @@ class DlpPoliciesApi:
         }
 
         return await self.api_client.call_api(
-            '/api/v1/endpoints/{endpoint_name}/policies/dlp/{id}', 'PATCH',
+            '/api/v1/endpoints/{endpoint_name}/policies/dlp/{id}', 'PUT',
             _path_params,
             _query_params,
             _header_params,
